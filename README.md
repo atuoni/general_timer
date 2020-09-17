@@ -1,6 +1,6 @@
 # General Timer Project
 ## About
-This is a repository with a microcontroller firmware of a timer device. It was build using a Microchip PIC12F675 microcontroller. The code was written in C language and was used the MPLABX to compile and build the program. 
+This is a repository with a microcontroller firmware of a timer device. It was built using a Microchip PIC12F675 microcontroller. The code was written in C language and was used the MPLABX to compile and build the program. 
 The code comments is in portuguese language.
 
 ## How it works
