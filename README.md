@@ -1,11 +1,10 @@
-## General Timer Project
+# General Timer Project
+## About
+This is a repository with a microcontroller firmware of a timer device. It was build using a Microchip PIC12F675 microcontroller. The code was written in C language and was used the MPLABX to compile and build the program. 
+The code comments is in portuguese language.
 
-This is a repository whith a firmware of a timer device. It was build using a PIC12F675 Microchip microcontroller. The code was written in C language and using MPLABX to compile and build the program. 
-The comments language in the code is portuguese.
+## How it works
+The device only has a push button to set and start the counting time. You can set two modes for counting (5 minutes or 10 minutes) pressing the button more than 10 seconds, so the blink led will show the mode selected. After a new press of the button, the timer counting starts and the AC output is turned on. After the timer gets the time selected the AC output is turned off. You also can cancel the timer operation pressing the button for more than 10 seconds during the counting time. 
 
-# How it works
-The device only has a push button to set and start the counting time. You can set two modes for counting (5 minutes or 10 minutes). The light led show the mode selected. After a new push on the button the timer counting starts and the AC output is turned it on. When the timer reach the time selected the AC output is turned off. 
-The c
-
-# VIDEO (portuguese language)
+## VIDEO (In portuguese language)
 [![Watch the video.](http://img.youtube.com/vi/sDOyX_M_l8k/0.jpg)](http://www.youtube.com/watch?v=sDOyX_M_l8k "General Timer")
