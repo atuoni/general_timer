@@ -2,8 +2,8 @@
  * File:   main_timer.c
  * Author: Amauri Tuoni
  *
- * Controle do Dispositivo Timer para ligar e desligar dispositivos 
- * podendo selecionar 2 tempos de preparo.Utilizando o PIC12F675.
+ * Controle do Dispositivo Timer para ligar e desligar cargas AC
+ * opção de selecionar 2 tempos de contagem.Utilizando o MCU: PIC12F675.
  * VERSÃO: 1.2
  * 
  * Created on 2 de Novembro de 2018, 21:02
