@@ -29,7 +29,7 @@ maintext CODE 0 16 16 79 2
 cstackBANK0 BANK0 1 20 20 12 1
 intentry CODE 0 4 4 7 2
 bssBANK0 BANK0 1 32 32 7 1
-$/tmp/xcXiigjLd.o
+$/tmp/xcXOglAbB.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 B B 1 2
 # %UNUSED Section
@@ -70,19 +70,19 @@ STRING 1FB-3FE 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/TIMER_CAFETEIRA.X.production.o
-C cinit CODE >297:/tmp/xcXHhkidL.s
-C cinit CODE >300:/tmp/xcXHhkidL.s
-C cinit CODE >329:/tmp/xcXHhkidL.s
-D cinit CODE >330:/tmp/xcXHhkidL.s
-E cinit CODE >331:/tmp/xcXHhkidL.s
-F cinit CODE >332:/tmp/xcXHhkidL.s
-10 cinit CODE >333:/tmp/xcXHhkidL.s
-11 cinit CODE >334:/tmp/xcXHhkidL.s
-12 cinit CODE >335:/tmp/xcXHhkidL.s
-13 cinit CODE >336:/tmp/xcXHhkidL.s
-14 cinit CODE >342:/tmp/xcXHhkidL.s
-14 cinit CODE >344:/tmp/xcXHhkidL.s
-15 cinit CODE >345:/tmp/xcXHhkidL.s
+C cinit CODE >297:/tmp/xcXAnklHG.s
+C cinit CODE >300:/tmp/xcXAnklHG.s
+C cinit CODE >329:/tmp/xcXAnklHG.s
+D cinit CODE >330:/tmp/xcXAnklHG.s
+E cinit CODE >331:/tmp/xcXAnklHG.s
+F cinit CODE >332:/tmp/xcXAnklHG.s
+10 cinit CODE >333:/tmp/xcXAnklHG.s
+11 cinit CODE >334:/tmp/xcXAnklHG.s
+12 cinit CODE >335:/tmp/xcXAnklHG.s
+13 cinit CODE >336:/tmp/xcXAnklHG.s
+14 cinit CODE >342:/tmp/xcXAnklHG.s
+14 cinit CODE >344:/tmp/xcXAnklHG.s
+15 cinit CODE >345:/tmp/xcXAnklHG.s
 4 intentry CODE >350:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
 17D text11 CODE >350:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
 17D text11 CODE >356:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
@@ -274,10 +274,10 @@ _GPIE 5B 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _GPIF 58 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _IOC3 4B3 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXiigjLd.o
+___sp 0 0 STACK 2 stack /tmp/xcXOglAbB.o
 _main 2C 0 CODE 0 maintext dist/default/production/TIMER_CAFETEIRA.X.production.o
 btemp 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
-start 16 0 CODE 0 init /tmp/xcXiigjLd.o
+start 16 0 CODE 0 init /tmp/xcXOglAbB.o
 __size_of_main 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _som_modo_preparo 1EE 0 CODE 0 text5 dist/default/production/TIMER_CAFETEIRA.X.production.o
 __size_of_config_TM1 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
@@ -287,12 +287,12 @@ __size_of_config_var 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.produ
 estado_botao@estado_toques 25 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 _timer_out 32 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
-intlevel0 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcXiigjLd.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXOglAbB.o
 wtemp0 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 cooking@modo_fim 2C 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
@@ -305,8 +305,8 @@ _cont_pisca_leds 37 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X
 __Lmaintext 7FE 0 ABS 0 maintext -
 __LnvBANK0 7FE 0 ABS 0 nvBANK0 -
 __end_of_som_modo_preparo 298 0 CODE 0 text5 dist/default/production/TIMER_CAFETEIRA.X.production.o
-___stackhi 0 0 ABS 0 - /tmp/xcXiigjLd.o
-___stacklo 0 0 ABS 0 - /tmp/xcXiigjLd.o
+___stackhi 0 0 ABS 0 - /tmp/xcXOglAbB.o
+___stacklo 0 0 ABS 0 - /tmp/xcXOglAbB.o
 _modo_lowpower 3EE 0 CODE 0 text2 dist/default/production/TIMER_CAFETEIRA.X.production.o
 __size_of_som_modo_preparo 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _bt_num_toques 39 0 BANK0 1 nvBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
@@ -320,7 +320,7 @@ _TMR1ON 80 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 _TRISIO 85 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
 cooking@timer_cont_min 2E 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
 cooking@timer_cont_seg 2B 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcXiigjLd.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXOglAbB.o
 __Hbank0 7FE 0 ABS 0 bank0 -
 __Hbank1 7FE 0 BANK1 1 bank1 -
 __Hcinit 2C 0 CODE 0 cinit -
@@ -371,7 +371,7 @@ __end_of_isr 34A 0 CODE 0 text11 dist/default/production/TIMER_CAFETEIRA.X.produ
 __end_of_som 3BE 0 CODE 0 text1 dist/default/production/TIMER_CAFETEIRA.X.production.o
 __HnvBANK0 7FE 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXiigjLd.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXOglAbB.o
 __end_of_modo_lowpower 3F6 0 CODE 0 text2 dist/default/production/TIMER_CAFETEIRA.X.production.o
 __LbssBANK0 7FE 0 ABS 0 bssBANK0 -
 _cont_toques 33 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
@@ -385,7 +385,7 @@ _config_TM1 3D2 0 CODE 0 text10 dist/default/production/TIMER_CAFETEIRA.X.produc
 _config_mcu 378 0 CODE 0 text9 dist/default/production/TIMER_CAFETEIRA.X.production.o
 _config_osc 3E4 0 CODE 0 text8 dist/default/production/TIMER_CAFETEIRA.X.production.o
 _config_var 3BE 0 CODE 0 text7 dist/default/production/TIMER_CAFETEIRA.X.production.o
-___osccal_val 7FE 0 CODE 0 osccal /tmp/xcXiigjLd.o
+___osccal_val 7FE 0 CODE 0 osccal /tmp/xcXOglAbB.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
