@@ -1,0 +1,2046 @@
+
+
+Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
+                                                                                               Thu Sep 17 16:43:15 2020
+
+Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
+     1                           	processor	12F675
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	text11,local,class=CODE,merge=1,delta=2
+    21                           	psect	intentry,global,class=CODE,delta=2
+    22                           	dabs	1,0x5E,2
+    23  0000                     
+    24                           ; Version 2.20
+    25                           ; Generated 29/04/2020 GMT
+    26                           ; 
+    27                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    28                           ; All rights reserved.
+    29                           ; 
+    30                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    31                           ; 
+    32                           ; Redistribution and use in source and binary forms, with or without modification, are
+    33                           ; permitted provided that the following conditions are met:
+    34                           ; 
+    35                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    36                           ;        conditions and the following disclaimer.
+    37                           ; 
+    38                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    39                           ;        of conditions and the following disclaimer in the documentation and/or other
+    40                           ;        materials provided with the distribution.
+    41                           ; 
+    42                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    43                           ;        software without specific prior written permission.
+    44                           ; 
+    45                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    46                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    47                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    48                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    49                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    50                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    51                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    52                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    53                           ; 
+    54                           ; 
+    55                           ; Code-generator required, PIC12F675 Definitions
+    56                           ; 
+    57                           ; SFR Addresses
+    58  0000                     	;# 
+    59  0001                     	;# 
+    60  0002                     	;# 
+    61  0003                     	;# 
+    62  0004                     	;# 
+    63  0005                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000E                     	;# 
+    68  000E                     	;# 
+    69  000F                     	;# 
+    70  0010                     	;# 
+    71  0019                     	;# 
+    72  001E                     	;# 
+    73  001F                     	;# 
+    74  0081                     	;# 
+    75  0085                     	;# 
+    76  008C                     	;# 
+    77  008E                     	;# 
+    78  0090                     	;# 
+    79  0095                     	;# 
+    80  0096                     	;# 
+    81  0096                     	;# 
+    82  0099                     	;# 
+    83  009A                     	;# 
+    84  009A                     	;# 
+    85  009B                     	;# 
+    86  009C                     	;# 
+    87  009D                     	;# 
+    88  009E                     	;# 
+    89  009F                     	;# 
+    90  0000                     	;# 
+    91  0001                     	;# 
+    92  0002                     	;# 
+    93  0003                     	;# 
+    94  0004                     	;# 
+    95  0005                     	;# 
+    96  000A                     	;# 
+    97  000B                     	;# 
+    98  000C                     	;# 
+    99  000E                     	;# 
+   100  000E                     	;# 
+   101  000F                     	;# 
+   102  0010                     	;# 
+   103  0019                     	;# 
+   104  001E                     	;# 
+   105  001F                     	;# 
+   106  0081                     	;# 
+   107  0085                     	;# 
+   108  008C                     	;# 
+   109  008E                     	;# 
+   110  0090                     	;# 
+   111  0095                     	;# 
+   112  0096                     	;# 
+   113  0096                     	;# 
+   114  0099                     	;# 
+   115  009A                     	;# 
+   116  009A                     	;# 
+   117  009B                     	;# 
+   118  009C                     	;# 
+   119  009D                     	;# 
+   120  009E                     	;# 
+   121  009F                     	;# 
+   122                           
+   123                           	psect	nvBANK0
+   124  0039                     __pnvBANK0:
+   125  0039                     _bt_num_toques:
+   126  0039                     	ds	1
+   127  000F                     _TMR1H	set	15
+   128  000E                     _TMR1L	set	14
+   129  0010                     _T1CON	set	16
+   130  0019                     _CMCON	set	25
+   131  0060                     _TMR1IF	set	96
+   132  0058                     _GPIF	set	88
+   133  0080                     _TMR1ON	set	128
+   134  002B                     _GP3	set	43
+   135  005B                     _GPIE	set	91
+   136  005E                     _PEIE	set	94
+   137  005F                     _GIE	set	95
+   138  002A                     _GP2	set	42
+   139  0029                     _GP1	set	41
+   140  0028                     _GP0	set	40
+   141  002D                     _GP5	set	45
+   142  002C                     _GP4	set	44
+   143  0095                     _WPU	set	149
+   144  0085                     _TRISIO	set	133
+   145  009F                     _ANSEL	set	159
+   146  0460                     _TMR1IE	set	1120
+   147  04B3                     _IOC3	set	1203
+   148                           
+   149                           	psect	cinit
+   150  000C                     start_initialization:	
+   151                           ; #config settings
+   152                           
+   153  000C                     __initialization:
+   154                           
+   155                           ; Clear objects allocated to BANK0
+   156  000C  1283               	bcf	3,5	;RP0=0, select bank0
+   157  000D  01B2               	clrf	__pbssBANK0& (0+127)
+   158  000E  01B3               	clrf	(__pbssBANK0+1)& (0+127)
+   159  000F  01B4               	clrf	(__pbssBANK0+2)& (0+127)
+   160  0010  01B5               	clrf	(__pbssBANK0+3)& (0+127)
+   161  0011  01B6               	clrf	(__pbssBANK0+4)& (0+127)
+   162  0012  01B7               	clrf	(__pbssBANK0+5)& (0+127)
+   163  0013  01B8               	clrf	(__pbssBANK0+6)& (0+127)
+   164  0014                     end_of_initialization:	
+   165                           ;End of C runtime variable initialization code
+   166                           
+   167  0014                     __end_of__initialization:
+   168  0014  0183               	clrf	3
+   169  0015  2816               	ljmp	_main	;jump to C main() function
+   170                           
+   171                           	psect	bssBANK0
+   172  0032                     __pbssBANK0:
+   173  0032                     _timer_out:
+   174  0032                     	ds	1
+   175  0033                     _cont_toques:
+   176  0033                     	ds	1
+   177  0034                     _modo_timer:
+   178  0034                     	ds	1
+   179  0035                     _bt_estado_anterior:
+   180  0035                     	ds	1
+   181  0036                     _bt_estado_atual:
+   182  0036                     	ds	1
+   183  0037                     _cont_pisca_leds:
+   184  0037                     	ds	1
+   185  0038                     _cont_botao_press:
+   186  0038                     	ds	1
+   187                           
+   188                           	psect	cstackCOMMON
+   189  0000                     __pcstackCOMMON:
+   190  0000                     ??_config_osc:
+   191  0000                     ??_config_mcu:	
+   192                           ; 1 bytes @ 0x0
+   193                           
+   194  0000                     ??_config_var:	
+   195                           ; 1 bytes @ 0x0
+   196                           
+   197  0000                     ??_config_TM1:	
+   198                           ; 1 bytes @ 0x0
+   199                           
+   200  0000                     ??_modo_lowpower:	
+   201                           ; 1 bytes @ 0x0
+   202                           
+   203  0000                     ??_ler_botao:	
+   204                           ; 1 bytes @ 0x0
+   205                           
+   206                           
+   207                           	psect	cstackBANK0
+   208  0020                     __pcstackBANK0:	
+   209                           ; 1 bytes @ 0x0
+   210                           
+   211  0020                     ?_config_osc:
+   212  0020                     ?_config_mcu:	
+   213                           ; 1 bytes @ 0x0
+   214                           
+   215  0020                     ?_config_var:	
+   216                           ; 1 bytes @ 0x0
+   217                           
+   218  0020                     ?_config_TM1:	
+   219                           ; 1 bytes @ 0x0
+   220                           
+   221  0020                     ?_estado_botao:	
+   222                           ; 1 bytes @ 0x0
+   223                           
+   224  0020                     ?_som:	
+   225                           ; 1 bytes @ 0x0
+   226                           
+   227  0020                     ?_cooking:	
+   228                           ; 1 bytes @ 0x0
+   229                           
+   230  0020                     ?_modo_lowpower:	
+   231                           ; 1 bytes @ 0x0
+   232                           
+   233  0020                     ?_som_modo_preparo:	
+   234                           ; 1 bytes @ 0x0
+   235                           
+   236  0020                     ?_main:	
+   237                           ; 1 bytes @ 0x0
+   238                           
+   239  0020                     ?_ler_botao:	
+   240                           ; 1 bytes @ 0x0
+   241                           
+   242  0020                     ?_isr:	
+   243                           ; 1 bytes @ 0x0
+   244                           
+   245  0020                     ??_isr:	
+   246                           ; 1 bytes @ 0x0
+   247                           
+   248                           
+   249                           ; 1 bytes @ 0x0
+   250  0020                     	ds	2
+   251  0022                     ??_som:
+   252  0022                     ??_som_modo_preparo:	
+   253                           ; 1 bytes @ 0x2
+   254                           
+   255  0022                     ler_botao@status:	
+   256                           ; 1 bytes @ 0x2
+   257                           
+   258                           
+   259                           ; 1 bytes @ 0x2
+   260  0022                     	ds	1
+   261  0023                     ??_estado_botao:
+   262                           
+   263                           ; 1 bytes @ 0x3
+   264  0023                     	ds	2
+   265  0025                     estado_botao@estado_toques:
+   266  0025                     som_modo_preparo@modo:	
+   267                           ; 1 bytes @ 0x5
+   268                           
+   269                           
+   270                           ; 1 bytes @ 0x5
+   271  0025                     	ds	1
+   272  0026                     som_modo_preparo@t:
+   273                           
+   274                           ; 1 bytes @ 0x6
+   275  0026                     	ds	1
+   276  0027                     som_modo_preparo@t_122:
+   277                           
+   278                           ; 1 bytes @ 0x7
+   279  0027                     	ds	1
+   280  0028                     ??_cooking:
+   281                           
+   282                           ; 1 bytes @ 0x8
+   283  0028                     	ds	3
+   284  002B                     cooking@timer_cont_seg:
+   285                           
+   286                           ; 1 bytes @ 0xB
+   287  002B                     	ds	1
+   288  002C                     cooking@modo_fim:
+   289                           
+   290                           ; 1 bytes @ 0xC
+   291  002C                     	ds	1
+   292  002D                     cooking@tempo:
+   293                           
+   294                           ; 1 bytes @ 0xD
+   295  002D                     	ds	1
+   296  002E                     cooking@timer_cont_min:
+   297                           
+   298                           ; 1 bytes @ 0xE
+   299  002E                     	ds	1
+   300  002F                     ??_main:
+   301                           
+   302                           ; 1 bytes @ 0xF
+   303  002F                     	ds	3
+   304                           
+   305                           	psect	maintext
+   306  0016                     __pmaintext:	
+   307 ;;
+   308 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   309 ;;
+   310 ;; *************** function _main *****************
+   311 ;; Defined at:
+   312 ;;		line 92 in file "main_timer.c"
+   313 ;; Parameters:    Size  Location     Type
+   314 ;;		None
+   315 ;; Auto vars:     Size  Location     Type
+   316 ;;		None
+   317 ;; Return value:  Size  Location     Type
+   318 ;;                  1    wreg      void 
+   319 ;; Registers used:
+   320 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   321 ;; Tracked objects:
+   322 ;;		On entry : B00/0
+   323 ;;		On exit  : 0/0
+   324 ;;		Unchanged: 0/0
+   325 ;; Data sizes:     COMMON   BANK0
+   326 ;;      Params:         0       0
+   327 ;;      Locals:         0       0
+   328 ;;      Temps:          0       3
+   329 ;;      Totals:         0       3
+   330 ;;Total ram usage:        3 bytes
+   331 ;; Hardware stack levels required when called:    3
+   332 ;; This function calls:
+   333 ;;		_config_TM1
+   334 ;;		_config_mcu
+   335 ;;		_config_osc
+   336 ;;		_config_var
+   337 ;;		_cooking
+   338 ;;		_estado_botao
+   339 ;;		_modo_lowpower
+   340 ;;		_som
+   341 ;; This function is called by:
+   342 ;;		Startup code after reset
+   343 ;; This function uses a non-reentrant model
+   344 ;;
+   345                           
+   346                           
+   347                           ;psect for function _main
+   348  0016                     _main:
+   349  0016                     l1185:	
+   350                           ;incstack = 0
+   351                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   352                           
+   353                           
+   354                           ;main_timer.c: 94:     config_osc();
+   355  0016  21F2               	fcall	_config_osc
+   356  0017                     l1187:
+   357                           
+   358                           ;main_timer.c: 95:     config_mcu();
+   359  0017  21BC               	fcall	_config_mcu
+   360  0018                     l1189:
+   361                           
+   362                           ;main_timer.c: 96:     config_var();
+   363  0018  21DF               	fcall	_config_var
+   364                           
+   365                           ;main_timer.c: 97:     config_TM1();
+   366  0019  21E9               	fcall	_config_TM1
+   367  001A                     l1191:
+   368                           
+   369                           ;main_timer.c: 100:         bt_num_toques = estado_botao();
+   370  001A  214C               	fcall	_estado_botao
+   371  001B  00DF               	movwf	btemp+1
+   372  001C  085F               	movf	btemp+1,w
+   373  001D  1283               	bcf	3,5	;RP0=0, select bank0
+   374  001E  00B9               	movwf	_bt_num_toques
+   375  001F                     l1193:
+   376                           
+   377                           ;main_timer.c: 101:         if(bt_num_toques == 1){
+   378  001F  0339               	decf	_bt_num_toques,w
+   379  0020  1D03               	btfss	3,2
+   380  0021  2823               	goto	u431
+   381  0022  2824               	goto	u430
+   382  0023                     u431:
+   383  0023  2889               	goto	l1237
+   384  0024                     u430:
+   385  0024                     l1195:
+   386                           
+   387                           ;main_timer.c: 102:             som();
+   388  0024  21D1               	fcall	_som
+   389                           
+   390                           ;main_timer.c: 103:             while (cont_pisca_leds <= 60){
+   391  0025  2882               	goto	l87
+   392  0026                     l1197:
+   393                           
+   394                           ;main_timer.c: 104:                 bt_num_toques = estado_botao();
+   395  0026  214C               	fcall	_estado_botao
+   396  0027  00DF               	movwf	btemp+1
+   397  0028  085F               	movf	btemp+1,w
+   398  0029  1283               	bcf	3,5	;RP0=0, select bank0
+   399  002A  00B9               	movwf	_bt_num_toques
+   400  002B                     l1199:
+   401                           
+   402                           ;main_timer.c: 106:                 if ((bt_estado_atual == 1) && cont_botao_press > 15 
+      +                          && bt_num_toques == 1){
+   403  002B  0336               	decf	_bt_estado_atual,w
+   404  002C  1D03               	btfss	3,2
+   405  002D  282F               	goto	u441
+   406  002E  2830               	goto	u440
+   407  002F                     u441:
+   408  002F  2843               	goto	l1213
+   409  0030                     u440:
+   410  0030                     l1201:
+   411  0030  3010               	movlw	16
+   412  0031  0238               	subwf	_cont_botao_press,w
+   413  0032  1C03               	skipc
+   414  0033  2835               	goto	u451
+   415  0034  2836               	goto	u450
+   416  0035                     u451:
+   417  0035  2843               	goto	l1213
+   418  0036                     u450:
+   419  0036                     l1203:
+   420  0036  0339               	decf	_bt_num_toques,w
+   421  0037  1D03               	btfss	3,2
+   422  0038  283A               	goto	u461
+   423  0039  283B               	goto	u460
+   424  003A                     u461:
+   425  003A  2843               	goto	l1213
+   426  003B                     u460:
+   427  003B                     l1205:
+   428                           
+   429                           ;main_timer.c: 107:                     som();
+   430  003B  21D1               	fcall	_som
+   431  003C                     l1207:
+   432                           
+   433                           ;main_timer.c: 108:                     modo_timer = ~modo_timer;
+   434  003C  1283               	bcf	3,5	;RP0=0, select bank0
+   435  003D  09B4               	comf	_modo_timer,f
+   436  003E                     l1209:
+   437                           
+   438                           ;main_timer.c: 109:                     cont_botao_press = 0;
+   439  003E  01B8               	clrf	_cont_botao_press
+   440  003F                     l1211:
+   441                           
+   442                           ;main_timer.c: 110:                     cont_toques = 2;
+   443  003F  3002               	movlw	2
+   444  0040  00DF               	movwf	btemp+1
+   445  0041  085F               	movf	btemp+1,w
+   446  0042  00B3               	movwf	_cont_toques
+   447  0043                     l1213:
+   448                           
+   449                           ;main_timer.c: 113:                 if (modo_timer == 0x00){
+   450  0043  0834               	movf	_modo_timer,w
+   451  0044  1D03               	btfss	3,2
+   452  0045  2847               	goto	u471
+   453  0046  2848               	goto	u470
+   454  0047                     u471:
+   455  0047  284A               	goto	l1217
+   456  0048                     u470:
+   457  0048                     l1215:
+   458                           
+   459                           ;main_timer.c: 114:                     GP4= 0;
+   460  0048  1205               	bcf	5,4	;volatile
+   461                           
+   462                           ;main_timer.c: 115:                     GP5= 1;
+   463  0049  1685               	bsf	5,5	;volatile
+   464  004A                     l1217:
+   465                           
+   466                           ;main_timer.c: 117:                 if (modo_timer == 0xFF){
+   467  004A  0A34               	incf	_modo_timer,w
+   468  004B  1D03               	btfss	3,2
+   469  004C  284E               	goto	u481
+   470  004D  284F               	goto	u480
+   471  004E                     u481:
+   472  004E  2851               	goto	l1221
+   473  004F                     u480:
+   474  004F                     l1219:
+   475                           
+   476                           ;main_timer.c: 118:                     GP5 = 0;
+   477  004F  1285               	bcf	5,5	;volatile
+   478                           
+   479                           ;main_timer.c: 119:                     GP4 = 1;
+   480  0050  1605               	bsf	5,4	;volatile
+   481  0051                     l1221:
+   482                           
+   483                           ;main_timer.c: 121:                 _delay(500000);
+   484  0051  3003               	movlw	3
+   485  0052  00B1               	movwf	??_main+2
+   486  0053  308A               	movlw	138
+   487  0054  00B0               	movwf	??_main+1
+   488  0055  3055               	movlw	85
+   489  0056  00AF               	movwf	??_main
+   490  0057                     u577:
+   491  0057  0BAF               	decfsz	??_main,f
+   492  0058  2857               	goto	u577
+   493  0059  0BB0               	decfsz	??_main+1,f
+   494  005A  2857               	goto	u577
+   495  005B  0BB1               	decfsz	??_main+2,f
+   496  005C  2857               	goto	u577
+   497  005D  285E               	nop2
+   498  005E                     l1223:
+   499                           
+   500                           ;main_timer.c: 122:                 GP4 = 1;
+   501  005E  1283               	bcf	3,5	;RP0=0, select bank0
+   502  005F  1605               	bsf	5,4	;volatile
+   503  0060                     l1225:
+   504                           
+   505                           ;main_timer.c: 123:                 GP5 = 1;
+   506  0060  1685               	bsf	5,5	;volatile
+   507                           
+   508                           ;main_timer.c: 124:                 _delay(500000);
+   509  0061  3003               	movlw	3
+   510  0062  00B1               	movwf	??_main+2
+   511  0063  308A               	movlw	138
+   512  0064  00B0               	movwf	??_main+1
+   513  0065  3055               	movlw	85
+   514  0066  00AF               	movwf	??_main
+   515  0067                     u587:
+   516  0067  0BAF               	decfsz	??_main,f
+   517  0068  2867               	goto	u587
+   518  0069  0BB0               	decfsz	??_main+1,f
+   519  006A  2867               	goto	u587
+   520  006B  0BB1               	decfsz	??_main+2,f
+   521  006C  2867               	goto	u587
+   522  006D  286E               	nop2
+   523  006E                     l1227:
+   524                           
+   525                           ;main_timer.c: 125:                 cont_pisca_leds++;
+   526  006E  3001               	movlw	1
+   527  006F  00DF               	movwf	btemp+1
+   528  0070  085F               	movf	btemp+1,w
+   529  0071  1283               	bcf	3,5	;RP0=0, select bank0
+   530  0072  07B7               	addwf	_cont_pisca_leds,f
+   531  0073                     l1229:
+   532                           
+   533                           ;main_timer.c: 126:                 if(bt_num_toques== 2){
+   534  0073  3002               	movlw	2
+   535  0074  0639               	xorwf	_bt_num_toques,w
+   536  0075  1D03               	btfss	3,2
+   537  0076  2878               	goto	u491
+   538  0077  2879               	goto	u490
+   539  0078                     u491:
+   540  0078  2882               	goto	l87
+   541  0079                     u490:
+   542  0079                     l1231:
+   543                           
+   544                           ;main_timer.c: 127:                     som();
+   545  0079  21D1               	fcall	_som
+   546  007A                     l1233:
+   547                           
+   548                           ;main_timer.c: 128:                     cooking(modo_timer);
+   549  007A  1283               	bcf	3,5	;RP0=0, select bank0
+   550  007B  0834               	movf	_modo_timer,w
+   551  007C  208F               	fcall	_cooking
+   552  007D                     l1235:
+   553                           
+   554                           ;main_timer.c: 129:                     cont_pisca_leds = 255;
+   555  007D  30FF               	movlw	255
+   556  007E  00DF               	movwf	btemp+1
+   557  007F  085F               	movf	btemp+1,w
+   558  0080  1283               	bcf	3,5	;RP0=0, select bank0
+   559  0081  00B7               	movwf	_cont_pisca_leds
+   560  0082                     l87:	
+   561                           ;main_timer.c: 131:             }
+   562                           
+   563                           
+   564                           ;main_timer.c: 103:             while (cont_pisca_leds <= 60){
+   565  0082  303D               	movlw	61
+   566  0083  1283               	bcf	3,5	;RP0=0, select bank0
+   567  0084  0237               	subwf	_cont_pisca_leds,w
+   568  0085  1C03               	skipc
+   569  0086  2888               	goto	u501
+   570  0087  2889               	goto	u500
+   571  0088                     u501:
+   572  0088  2826               	goto	l1197
+   573  0089                     u500:
+   574  0089                     l1237:
+   575                           
+   576                           ;main_timer.c: 133:         cont_toques = 0;
+   577  0089  01B3               	clrf	_cont_toques
+   578  008A                     l1239:
+   579                           
+   580                           ;main_timer.c: 134:         GP4 = 1;
+   581  008A  1605               	bsf	5,4	;volatile
+   582  008B                     l1241:
+   583                           
+   584                           ;main_timer.c: 135:         GP5 = 1;
+   585  008B  1685               	bsf	5,5	;volatile
+   586  008C                     l1243:
+   587                           
+   588                           ;main_timer.c: 136:         modo_lowpower();
+   589  008C  21F7               	fcall	_modo_lowpower
+   590  008D  281A               	goto	l1191
+   591  008E  280B               	ljmp	start
+   592  008F                     __end_of_main:
+   593                           
+   594                           	psect	text1
+   595  01D1                     __ptext1:	
+   596 ;; *************** function _som *****************
+   597 ;; Defined at:
+   598 ;;		line 301 in file "main_timer.c"
+   599 ;; Parameters:    Size  Location     Type
+   600 ;;		None
+   601 ;; Auto vars:     Size  Location     Type
+   602 ;;		None
+   603 ;; Return value:  Size  Location     Type
+   604 ;;                  1    wreg      void 
+   605 ;; Registers used:
+   606 ;;		wreg
+   607 ;; Tracked objects:
+   608 ;;		On entry : 0/0
+   609 ;;		On exit  : 0/0
+   610 ;;		Unchanged: 0/0
+   611 ;; Data sizes:     COMMON   BANK0
+   612 ;;      Params:         0       0
+   613 ;;      Locals:         0       0
+   614 ;;      Temps:          0       2
+   615 ;;      Totals:         0       2
+   616 ;;Total ram usage:        2 bytes
+   617 ;; Hardware stack levels used:    1
+   618 ;; Hardware stack levels required when called:    1
+   619 ;; This function calls:
+   620 ;;		Nothing
+   621 ;; This function is called by:
+   622 ;;		_main
+   623 ;; This function uses a non-reentrant model
+   624 ;;
+   625                           
+   626                           
+   627                           ;psect for function _som
+   628  01D1                     _som:
+   629  01D1                     l1125:	
+   630                           ;incstack = 0
+   631                           ; Regs used in _som: [wreg]
+   632                           
+   633                           
+   634                           ;main_timer.c: 302:     GP1 = 1;
+   635  01D1  1283               	bcf	3,5	;RP0=0, select bank0
+   636  01D2  1485               	bsf	5,1	;volatile
+   637  01D3                     l1127:
+   638                           
+   639                           ;main_timer.c: 303:     _delay(100000);
+   640  01D3  3082               	movlw	130
+   641  01D4  00A3               	movwf	??_som+1
+   642  01D5  30DD               	movlw	221
+   643  01D6  00A2               	movwf	??_som
+   644  01D7                     u597:
+   645  01D7  0BA2               	decfsz	??_som,f
+   646  01D8  29D7               	goto	u597
+   647  01D9  0BA3               	decfsz	??_som+1,f
+   648  01DA  29D7               	goto	u597
+   649  01DB  29DC               	nop2
+   650  01DC                     l1129:
+   651                           
+   652                           ;main_timer.c: 304:     GP1 = 0;
+   653  01DC  1283               	bcf	3,5	;RP0=0, select bank0
+   654  01DD  1085               	bcf	5,1	;volatile
+   655  01DE                     l137:
+   656  01DE  0008               	return
+   657  01DF                     __end_of_som:
+   658                           
+   659                           	psect	text2
+   660  01F7                     __ptext2:	
+   661 ;; *************** function _modo_lowpower *****************
+   662 ;; Defined at:
+   663 ;;		line 154 in file "main_timer.c"
+   664 ;; Parameters:    Size  Location     Type
+   665 ;;		None
+   666 ;; Auto vars:     Size  Location     Type
+   667 ;;		None
+   668 ;; Return value:  Size  Location     Type
+   669 ;;                  1    wreg      void 
+   670 ;; Registers used:
+   671 ;;		None
+   672 ;; Tracked objects:
+   673 ;;		On entry : 0/0
+   674 ;;		On exit  : 0/0
+   675 ;;		Unchanged: 0/0
+   676 ;; Data sizes:     COMMON   BANK0
+   677 ;;      Params:         0       0
+   678 ;;      Locals:         0       0
+   679 ;;      Temps:          0       0
+   680 ;;      Totals:         0       0
+   681 ;;Total ram usage:        0 bytes
+   682 ;; Hardware stack levels used:    1
+   683 ;; Hardware stack levels required when called:    1
+   684 ;; This function calls:
+   685 ;;		Nothing
+   686 ;; This function is called by:
+   687 ;;		_main
+   688 ;; This function uses a non-reentrant model
+   689 ;;
+   690                           
+   691                           
+   692                           ;psect for function _modo_lowpower
+   693  01F7                     _modo_lowpower:
+   694  01F7                     l1183:	
+   695                           ;incstack = 0
+   696                           ; Regs used in _modo_lowpower: []
+   697                           
+   698  01F7  0063               	sleep	;# 
+   699                           
+   700                           ;main_timer.c: 156:     __nop();
+   701  01F8  0000               	nop
+   702                           
+   703                           ;main_timer.c: 157:     __nop();
+   704  01F9  0000               	nop
+   705  01FA                     l102:
+   706  01FA  0008               	return
+   707  01FB                     __end_of_modo_lowpower:
+   708                           
+   709                           	psect	text3
+   710  014C                     __ptext3:	
+   711 ;; *************** function _estado_botao *****************
+   712 ;; Defined at:
+   713 ;;		line 220 in file "main_timer.c"
+   714 ;; Parameters:    Size  Location     Type
+   715 ;;		None
+   716 ;; Auto vars:     Size  Location     Type
+   717 ;;  estado_toque    1    5[BANK0 ] unsigned char 
+   718 ;; Return value:  Size  Location     Type
+   719 ;;                  1    wreg      unsigned char 
+   720 ;; Registers used:
+   721 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   722 ;; Tracked objects:
+   723 ;;		On entry : 0/0
+   724 ;;		On exit  : 0/0
+   725 ;;		Unchanged: 0/0
+   726 ;; Data sizes:     COMMON   BANK0
+   727 ;;      Params:         0       0
+   728 ;;      Locals:         0       1
+   729 ;;      Temps:          0       2
+   730 ;;      Totals:         0       3
+   731 ;;Total ram usage:        3 bytes
+   732 ;; Hardware stack levels used:    1
+   733 ;; Hardware stack levels required when called:    2
+   734 ;; This function calls:
+   735 ;;		_ler_botao
+   736 ;; This function is called by:
+   737 ;;		_main
+   738 ;; This function uses a non-reentrant model
+   739 ;;
+   740                           
+   741                           
+   742                           ;psect for function _estado_botao
+   743  014C                     _estado_botao:
+   744  014C                     l1099:	
+   745                           ;incstack = 0
+   746                           ; Regs used in _estado_botao: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   747                           
+   748                           
+   749                           ;main_timer.c: 222:     char estado_toques;;main_timer.c: 225:     bt_estado_atual = ler
+      +                          _botao();
+   750  014C  21A5               	fcall	_ler_botao
+   751  014D  00DF               	movwf	btemp+1
+   752  014E  085F               	movf	btemp+1,w
+   753  014F  1283               	bcf	3,5	;RP0=0, select bank0
+   754  0150  00B6               	movwf	_bt_estado_atual
+   755  0151                     l1101:
+   756                           
+   757                           ;main_timer.c: 226:     if(bt_estado_atual != bt_estado_anterior){
+   758  0151  0836               	movf	_bt_estado_atual,w
+   759  0152  0635               	xorwf	_bt_estado_anterior,w
+   760  0153  1903               	skipnz
+   761  0154  2956               	goto	u351
+   762  0155  2957               	goto	u350
+   763  0156                     u351:
+   764  0156  2967               	goto	l1113
+   765  0157                     u350:
+   766  0157                     l1103:
+   767                           
+   768                           ;main_timer.c: 227:         cont_toques++;
+   769  0157  3001               	movlw	1
+   770  0158  00DF               	movwf	btemp+1
+   771  0159  085F               	movf	btemp+1,w
+   772  015A  07B3               	addwf	_cont_toques,f
+   773  015B  2967               	goto	l1113
+   774  015C                     l1105:
+   775                           
+   776                           ;main_timer.c: 231:                 estado_toques = 0;
+   777  015C  01A5               	clrf	estado_botao@estado_toques
+   778                           
+   779                           ;main_timer.c: 232:                 break;
+   780  015D  2977               	goto	l1115
+   781  015E                     l1107:
+   782                           
+   783                           ;main_timer.c: 235:                 estado_toques = 2;
+   784  015E  3002               	movlw	2
+   785  015F  00DF               	movwf	btemp+1
+   786  0160  085F               	movf	btemp+1,w
+   787  0161  00A5               	movwf	estado_botao@estado_toques
+   788  0162                     l1109:
+   789                           
+   790                           ;main_timer.c: 236:                 cont_toques = 0;
+   791  0162  01B3               	clrf	_cont_toques
+   792                           
+   793                           ;main_timer.c: 237:                 break;
+   794  0163  2977               	goto	l1115
+   795  0164                     l122:	
+   796                           ;main_timer.c: 238:         };main_timer.c: 239:         default: {
+   797                           
+   798                           
+   799                           ;main_timer.c: 240:                 estado_toques = 1;
+   800  0164  01A5               	clrf	estado_botao@estado_toques
+   801  0165  0AA5               	incf	estado_botao@estado_toques,f
+   802                           
+   803                           ;main_timer.c: 241:                 break;
+   804  0166  2977               	goto	l1115
+   805  0167                     l1113:
+   806  0167  0833               	movf	_cont_toques,w
+   807  0168  00A3               	movwf	??_estado_botao
+   808  0169  01A4               	clrf	??_estado_botao+1
+   809                           
+   810                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   811                           ; Switch size 1, requested type "simple"
+   812                           ; Number of cases is 1, Range of values is 0 to 0
+   813                           ; switch strategies available:
+   814                           ; Name         Instructions Cycles
+   815                           ; simple_byte            4     3 (average)
+   816                           ; direct_byte            7     6 (fixed)
+   817                           ; jumptable            260     6 (fixed)
+   818                           ;	Chosen strategy is simple_byte
+   819  016A  0824               	movf	??_estado_botao+1,w
+   820  016B  3A00               	xorlw	0	; case 0
+   821  016C  1903               	skipnz
+   822  016D  296F               	goto	l1279
+   823  016E  2964               	goto	l122
+   824  016F                     l1279:
+   825                           
+   826                           ; Switch size 1, requested type "simple"
+   827                           ; Number of cases is 2, Range of values is 0 to 4
+   828                           ; switch strategies available:
+   829                           ; Name         Instructions Cycles
+   830                           ; simple_byte            7     4 (average)
+   831                           ; direct_byte           11     6 (fixed)
+   832                           ; jumptable            260     6 (fixed)
+   833                           ;	Chosen strategy is simple_byte
+   834  016F  0823               	movf	??_estado_botao,w
+   835  0170  3A00               	xorlw	0	; case 0
+   836  0171  1903               	skipnz
+   837  0172  295C               	goto	l1105
+   838  0173  3A04               	xorlw	4	; case 4
+   839  0174  1903               	skipnz
+   840  0175  295E               	goto	l1107
+   841  0176  2964               	goto	l122
+   842  0177                     l1115:
+   843                           
+   844                           ;main_timer.c: 244:     bt_estado_anterior = bt_estado_atual;
+   845  0177  0836               	movf	_bt_estado_atual,w
+   846  0178  00DF               	movwf	btemp+1
+   847  0179  085F               	movf	btemp+1,w
+   848  017A  00B5               	movwf	_bt_estado_anterior
+   849  017B                     l1117:
+   850                           
+   851                           ;main_timer.c: 245:     return estado_toques;
+   852  017B  0825               	movf	estado_botao@estado_toques,w
+   853  017C                     l123:
+   854  017C  0008               	return
+   855  017D                     __end_of_estado_botao:
+   856                           
+   857                           	psect	text4
+   858  008F                     __ptext4:	
+   859 ;; *************** function _cooking *****************
+   860 ;; Defined at:
+   861 ;;		line 253 in file "main_timer.c"
+   862 ;; Parameters:    Size  Location     Type
+   863 ;;  tempo           1    wreg     unsigned char 
+   864 ;; Auto vars:     Size  Location     Type
+   865 ;;  tempo           1   13[BANK0 ] unsigned char 
+   866 ;;  timer_cont_m    1   14[BANK0 ] unsigned char 
+   867 ;;  modo_fim        1   12[BANK0 ] unsigned char 
+   868 ;;  timer_cont_s    1   11[BANK0 ] unsigned char 
+   869 ;; Return value:  Size  Location     Type
+   870 ;;                  1    wreg      void 
+   871 ;; Registers used:
+   872 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   873 ;; Tracked objects:
+   874 ;;		On entry : 0/0
+   875 ;;		On exit  : 0/0
+   876 ;;		Unchanged: 0/0
+   877 ;; Data sizes:     COMMON   BANK0
+   878 ;;      Params:         0       0
+   879 ;;      Locals:         0       4
+   880 ;;      Temps:          0       3
+   881 ;;      Totals:         0       7
+   882 ;;Total ram usage:        7 bytes
+   883 ;; Hardware stack levels used:    1
+   884 ;; Hardware stack levels required when called:    2
+   885 ;; This function calls:
+   886 ;;		_ler_botao
+   887 ;;		_som_modo_preparo
+   888 ;; This function is called by:
+   889 ;;		_main
+   890 ;; This function uses a non-reentrant model
+   891 ;;
+   892                           
+   893                           
+   894                           ;psect for function _cooking
+   895  008F                     _cooking:
+   896                           
+   897                           ;incstack = 0
+   898                           ; Regs used in _cooking: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   899                           ;cooking@tempo stored from wreg
+   900  008F  1283               	bcf	3,5	;RP0=0, select bank0
+   901  0090  00AD               	movwf	cooking@tempo
+   902  0091                     l1131:
+   903                           
+   904                           ;main_timer.c: 254:     char timer_cont_seg;;main_timer.c: 255:     char timer_cont_min;
+      +                          ;main_timer.c: 256:     char modo_fim;;main_timer.c: 257:     modo_fim = 0;
+   905  0091  01AC               	clrf	cooking@modo_fim
+   906  0092                     l1133:
+   907                           
+   908                           ;main_timer.c: 258:     if(tempo == 0x00){
+   909  0092  082D               	movf	cooking@tempo,w
+   910  0093  1D03               	btfss	3,2
+   911  0094  2896               	goto	u361
+   912  0095  2897               	goto	u360
+   913  0096                     u361:
+   914  0096  289B               	goto	l1137
+   915  0097                     u360:
+   916  0097                     l1135:
+   917                           
+   918                           ;main_timer.c: 259:         timer_cont_min = 5;
+   919  0097  3005               	movlw	5
+   920  0098  00DF               	movwf	btemp+1
+   921  0099  085F               	movf	btemp+1,w
+   922  009A  00AE               	movwf	cooking@timer_cont_min
+   923  009B                     l1137:
+   924                           
+   925                           ;main_timer.c: 261:     if(tempo == 0xFF){
+   926  009B  0A2D               	incf	cooking@tempo,w
+   927  009C  1D03               	btfss	3,2
+   928  009D  289F               	goto	u371
+   929  009E  28A0               	goto	u370
+   930  009F                     u371:
+   931  009F  28ED               	goto	l1179
+   932  00A0                     u370:
+   933  00A0                     l1139:
+   934                           
+   935                           ;main_timer.c: 262:         timer_cont_min = 10;
+   936  00A0  300A               	movlw	10
+   937  00A1  00DF               	movwf	btemp+1
+   938  00A2  085F               	movf	btemp+1,w
+   939  00A3  00AE               	movwf	cooking@timer_cont_min
+   940  00A4  28ED               	goto	l1179
+   941  00A5                     l1141:
+   942                           
+   943                           ;main_timer.c: 265:         if (timer_out == 1){
+   944  00A5  0332               	decf	_timer_out,w
+   945  00A6  1D03               	btfss	3,2
+   946  00A7  28A9               	goto	u381
+   947  00A8  28AA               	goto	u380
+   948  00A9                     u381:
+   949  00A9  28B8               	goto	l1153
+   950  00AA                     u380:
+   951  00AA                     l1143:
+   952                           
+   953                           ;main_timer.c: 266:             timer_out = 0;
+   954  00AA  01B2               	clrf	_timer_out
+   955  00AB                     l1145:
+   956                           
+   957                           ;main_timer.c: 267:             if (timer_cont_seg == 0){
+   958  00AB  082B               	movf	cooking@timer_cont_seg,w
+   959  00AC  1D03               	btfss	3,2
+   960  00AD  28AF               	goto	u391
+   961  00AE  28B0               	goto	u390
+   962  00AF                     u391:
+   963  00AF  28B6               	goto	l1151
+   964  00B0                     u390:
+   965  00B0                     l1147:
+   966                           
+   967                           ;main_timer.c: 268:                 timer_cont_min--;
+   968  00B0  3001               	movlw	1
+   969  00B1  02AE               	subwf	cooking@timer_cont_min,f
+   970  00B2                     l1149:
+   971                           
+   972                           ;main_timer.c: 269:                 timer_cont_seg = 114;
+   973  00B2  3072               	movlw	114
+   974  00B3  00DF               	movwf	btemp+1
+   975  00B4  085F               	movf	btemp+1,w
+   976  00B5  00AB               	movwf	cooking@timer_cont_seg
+   977  00B6                     l1151:
+   978                           
+   979                           ;main_timer.c: 271:                 timer_cont_seg--;
+   980  00B6  3001               	movlw	1
+   981  00B7  02AB               	subwf	cooking@timer_cont_seg,f
+   982  00B8                     l1153:
+   983                           
+   984                           ;main_timer.c: 273:         TMR1ON = 1;
+   985  00B8  1410               	bsf	16,0	;volatile
+   986  00B9                     l1155:
+   987                           
+   988                           ;main_timer.c: 274:         GP0 = 1;
+   989  00B9  1405               	bsf	5,0	;volatile
+   990  00BA                     l1157:
+   991                           
+   992                           ;main_timer.c: 275:         GP4 = 0;
+   993  00BA  1205               	bcf	5,4	;volatile
+   994  00BB                     l1159:
+   995                           
+   996                           ;main_timer.c: 276:         GP5 = 0;
+   997  00BB  1285               	bcf	5,5	;volatile
+   998  00BC                     l1161:
+   999                           
+  1000                           ;main_timer.c: 277:         _delay(250000);
+  1001  00BC  3002               	movlw	2
+  1002  00BD  00AA               	movwf	??_cooking+2
+  1003  00BE  3045               	movlw	69
+  1004  00BF  00A9               	movwf	??_cooking+1
+  1005  00C0  30A9               	movlw	169
+  1006  00C1  00A8               	movwf	??_cooking
+  1007  00C2                     u607:
+  1008  00C2  0BA8               	decfsz	??_cooking,f
+  1009  00C3  28C2               	goto	u607
+  1010  00C4  0BA9               	decfsz	??_cooking+1,f
+  1011  00C5  28C2               	goto	u607
+  1012  00C6  0BAA               	decfsz	??_cooking+2,f
+  1013  00C7  28C2               	goto	u607
+  1014  00C8  28C9               	nop2
+  1015  00C9                     l1163:
+  1016                           
+  1017                           ;main_timer.c: 278:         GP4 = 1;
+  1018  00C9  1283               	bcf	3,5	;RP0=0, select bank0
+  1019  00CA  1605               	bsf	5,4	;volatile
+  1020  00CB                     l1165:
+  1021                           
+  1022                           ;main_timer.c: 279:         GP5 = 1;
+  1023  00CB  1685               	bsf	5,5	;volatile
+  1024  00CC                     l1167:
+  1025                           
+  1026                           ;main_timer.c: 280:         _delay(250000);
+  1027  00CC  3002               	movlw	2
+  1028  00CD  00AA               	movwf	??_cooking+2
+  1029  00CE  3045               	movlw	69
+  1030  00CF  00A9               	movwf	??_cooking+1
+  1031  00D0  30A9               	movlw	169
+  1032  00D1  00A8               	movwf	??_cooking
+  1033  00D2                     u617:
+  1034  00D2  0BA8               	decfsz	??_cooking,f
+  1035  00D3  28D2               	goto	u617
+  1036  00D4  0BA9               	decfsz	??_cooking+1,f
+  1037  00D5  28D2               	goto	u617
+  1038  00D6  0BAA               	decfsz	??_cooking+2,f
+  1039  00D7  28D2               	goto	u617
+  1040  00D8  28D9               	nop2
+  1041  00D9                     l1169:
+  1042                           
+  1043                           ;main_timer.c: 282:         bt_estado_atual = ler_botao();
+  1044  00D9  21A5               	fcall	_ler_botao
+  1045  00DA  00DF               	movwf	btemp+1
+  1046  00DB  085F               	movf	btemp+1,w
+  1047  00DC  1283               	bcf	3,5	;RP0=0, select bank0
+  1048  00DD  00B6               	movwf	_bt_estado_atual
+  1049  00DE                     l1171:
+  1050                           
+  1051                           ;main_timer.c: 284:         if (bt_estado_atual==1 && cont_botao_press > 15){
+  1052  00DE  0336               	decf	_bt_estado_atual,w
+  1053  00DF  1D03               	btfss	3,2
+  1054  00E0  28E2               	goto	u401
+  1055  00E1  28E3               	goto	u400
+  1056  00E2                     u401:
+  1057  00E2  28ED               	goto	l1179
+  1058  00E3                     u400:
+  1059  00E3                     l1173:
+  1060  00E3  3010               	movlw	16
+  1061  00E4  0238               	subwf	_cont_botao_press,w
+  1062  00E5  1C03               	skipc
+  1063  00E6  28E8               	goto	u411
+  1064  00E7  28E9               	goto	u410
+  1065  00E8                     u411:
+  1066  00E8  28ED               	goto	l1179
+  1067  00E9                     u410:
+  1068  00E9                     l1175:
+  1069                           
+  1070                           ;main_timer.c: 285:             modo_fim = 1;
+  1071  00E9  01AC               	clrf	cooking@modo_fim
+  1072  00EA  0AAC               	incf	cooking@modo_fim,f
+  1073  00EB                     l1177:
+  1074                           
+  1075                           ;main_timer.c: 286:             cont_botao_press = 0;
+  1076  00EB  01B8               	clrf	_cont_botao_press
+  1077                           
+  1078                           ;main_timer.c: 287:             timer_cont_min =0;
+  1079  00EC  01AE               	clrf	cooking@timer_cont_min
+  1080  00ED                     l1179:
+  1081                           
+  1082                           ;main_timer.c: 264:     while(timer_cont_min != 0){
+  1083  00ED  082E               	movf	cooking@timer_cont_min,w
+  1084  00EE  1D03               	btfss	3,2
+  1085  00EF  28F1               	goto	u421
+  1086  00F0  28F2               	goto	u420
+  1087  00F1                     u421:
+  1088  00F1  28A5               	goto	l1141
+  1089  00F2                     u420:
+  1090  00F2                     l133:
+  1091                           
+  1092                           ;main_timer.c: 290:     TMR1ON = 0;
+  1093  00F2  1010               	bcf	16,0	;volatile
+  1094                           
+  1095                           ;main_timer.c: 291:     GP0 = 0;
+  1096  00F3  1005               	bcf	5,0	;volatile
+  1097  00F4                     l1181:
+  1098                           
+  1099                           ;main_timer.c: 292:     som_modo_preparo(modo_fim);
+  1100  00F4  082C               	movf	cooking@modo_fim,w
+  1101  00F5  20F7               	fcall	_som_modo_preparo
+  1102  00F6                     l134:
+  1103  00F6  0008               	return
+  1104  00F7                     __end_of_cooking:
+  1105                           
+  1106                           	psect	text5
+  1107  00F7                     __ptext5:	
+  1108 ;; *************** function _som_modo_preparo *****************
+  1109 ;; Defined at:
+  1110 ;;		line 311 in file "main_timer.c"
+  1111 ;; Parameters:    Size  Location     Type
+  1112 ;;  modo            1    wreg     unsigned char 
+  1113 ;; Auto vars:     Size  Location     Type
+  1114 ;;  modo            1    5[BANK0 ] unsigned char 
+  1115 ;;  t               1    7[BANK0 ] unsigned char 
+  1116 ;;  t               1    6[BANK0 ] unsigned char 
+  1117 ;; Return value:  Size  Location     Type
+  1118 ;;                  1    wreg      void 
+  1119 ;; Registers used:
+  1120 ;;		wreg, status,2, status,0, btemp+1
+  1121 ;; Tracked objects:
+  1122 ;;		On entry : 0/0
+  1123 ;;		On exit  : 0/0
+  1124 ;;		Unchanged: 0/0
+  1125 ;; Data sizes:     COMMON   BANK0
+  1126 ;;      Params:         0       0
+  1127 ;;      Locals:         0       3
+  1128 ;;      Temps:          0       3
+  1129 ;;      Totals:         0       6
+  1130 ;;Total ram usage:        6 bytes
+  1131 ;; Hardware stack levels used:    1
+  1132 ;; Hardware stack levels required when called:    1
+  1133 ;; This function calls:
+  1134 ;;		Nothing
+  1135 ;; This function is called by:
+  1136 ;;		_cooking
+  1137 ;; This function uses a non-reentrant model
+  1138 ;;
+  1139                           
+  1140                           
+  1141                           ;psect for function _som_modo_preparo
+  1142  00F7                     _som_modo_preparo:
+  1143                           
+  1144                           ;incstack = 0
+  1145                           ; Regs used in _som_modo_preparo: [wreg+status,2+status,0+btemp+1]
+  1146                           ;som_modo_preparo@modo stored from wreg
+  1147  00F7  1283               	bcf	3,5	;RP0=0, select bank0
+  1148  00F8  00A5               	movwf	som_modo_preparo@modo
+  1149  00F9                     l1031:
+  1150                           
+  1151                           ;main_timer.c: 312:     if(modo == 0){
+  1152  00F9  0825               	movf	som_modo_preparo@modo,w
+  1153  00FA  1D03               	btfss	3,2
+  1154  00FB  28FD               	goto	u311
+  1155  00FC  28FE               	goto	u310
+  1156  00FD                     u311:
+  1157  00FD  2925               	goto	l1047
+  1158  00FE                     u310:
+  1159  00FE                     l1033:
+  1160                           
+  1161                           ;main_timer.c: 314:         for(char t=0; t<= 15; t++){
+  1162  00FE  01A6               	clrf	som_modo_preparo@t
+  1163  00FF                     l141:
+  1164                           
+  1165                           ;main_timer.c: 315:             GP1 = 1;
+  1166  00FF  1485               	bsf	5,1	;volatile
+  1167  0100                     l1039:
+  1168                           
+  1169                           ;main_timer.c: 316:             _delay(300000);
+  1170  0100  3002               	movlw	2
+  1171  0101  00A4               	movwf	??_som_modo_preparo+2
+  1172  0102  3086               	movlw	134
+  1173  0103  00A3               	movwf	??_som_modo_preparo+1
+  1174  0104  3099               	movlw	153
+  1175  0105  00A2               	movwf	??_som_modo_preparo
+  1176  0106                     u627:
+  1177  0106  0BA2               	decfsz	??_som_modo_preparo,f
+  1178  0107  2906               	goto	u627
+  1179  0108  0BA3               	decfsz	??_som_modo_preparo+1,f
+  1180  0109  2906               	goto	u627
+  1181  010A  0BA4               	decfsz	??_som_modo_preparo+2,f
+  1182  010B  2906               	goto	u627
+  1183  010C                     l1041:
+  1184                           
+  1185                           ;main_timer.c: 317:             GP1 = 0;
+  1186  010C  1283               	bcf	3,5	;RP0=0, select bank0
+  1187  010D  1085               	bcf	5,1	;volatile
+  1188                           
+  1189                           ;main_timer.c: 318:             _delay(300000);
+  1190  010E  3002               	movlw	2
+  1191  010F  00A4               	movwf	??_som_modo_preparo+2
+  1192  0110  3086               	movlw	134
+  1193  0111  00A3               	movwf	??_som_modo_preparo+1
+  1194  0112  3099               	movlw	153
+  1195  0113  00A2               	movwf	??_som_modo_preparo
+  1196  0114                     u637:
+  1197  0114  0BA2               	decfsz	??_som_modo_preparo,f
+  1198  0115  2914               	goto	u637
+  1199  0116  0BA3               	decfsz	??_som_modo_preparo+1,f
+  1200  0117  2914               	goto	u637
+  1201  0118  0BA4               	decfsz	??_som_modo_preparo+2,f
+  1202  0119  2914               	goto	u637
+  1203  011A                     l1043:
+  1204                           
+  1205                           ;main_timer.c: 319:         }
+  1206  011A  3001               	movlw	1
+  1207  011B  00DF               	movwf	btemp+1
+  1208  011C  085F               	movf	btemp+1,w
+  1209  011D  1283               	bcf	3,5	;RP0=0, select bank0
+  1210  011E  07A6               	addwf	som_modo_preparo@t,f
+  1211  011F                     l1045:
+  1212  011F  3010               	movlw	16
+  1213  0120  0226               	subwf	som_modo_preparo@t,w
+  1214  0121  1C03               	skipc
+  1215  0122  2924               	goto	u321
+  1216  0123  2925               	goto	u320
+  1217  0124                     u321:
+  1218  0124  28FF               	goto	l141
+  1219  0125                     u320:
+  1220  0125                     l1047:
+  1221                           
+  1222                           ;main_timer.c: 321:     if(modo == 1){
+  1223  0125  0325               	decf	som_modo_preparo@modo,w
+  1224  0126  1D03               	btfss	3,2
+  1225  0127  2929               	goto	u331
+  1226  0128  292A               	goto	u330
+  1227  0129                     u331:
+  1228  0129  294B               	goto	l146
+  1229  012A                     u330:
+  1230  012A                     l1049:
+  1231                           
+  1232                           ;main_timer.c: 322:         for(char t=0; t<=3; t++){
+  1233  012A  01A7               	clrf	som_modo_preparo@t_122
+  1234  012B                     l144:
+  1235                           
+  1236                           ;main_timer.c: 323:             GP1 = 1;
+  1237  012B  1485               	bsf	5,1	;volatile
+  1238  012C                     l1055:
+  1239                           
+  1240                           ;main_timer.c: 324:             _delay(100000);
+  1241  012C  3082               	movlw	130
+  1242  012D  00A3               	movwf	??_som_modo_preparo+1
+  1243  012E  30DD               	movlw	221
+  1244  012F  00A2               	movwf	??_som_modo_preparo
+  1245  0130                     u647:
+  1246  0130  0BA2               	decfsz	??_som_modo_preparo,f
+  1247  0131  2930               	goto	u647
+  1248  0132  0BA3               	decfsz	??_som_modo_preparo+1,f
+  1249  0133  2930               	goto	u647
+  1250  0134  2935               	nop2
+  1251  0135                     l1057:
+  1252                           
+  1253                           ;main_timer.c: 325:             GP1 = 0;
+  1254  0135  1283               	bcf	3,5	;RP0=0, select bank0
+  1255  0136  1085               	bcf	5,1	;volatile
+  1256                           
+  1257                           ;main_timer.c: 326:             _delay(100000);
+  1258  0137  3082               	movlw	130
+  1259  0138  00A3               	movwf	??_som_modo_preparo+1
+  1260  0139  30DD               	movlw	221
+  1261  013A  00A2               	movwf	??_som_modo_preparo
+  1262  013B                     u657:
+  1263  013B  0BA2               	decfsz	??_som_modo_preparo,f
+  1264  013C  293B               	goto	u657
+  1265  013D  0BA3               	decfsz	??_som_modo_preparo+1,f
+  1266  013E  293B               	goto	u657
+  1267  013F  2940               	nop2
+  1268  0140                     l1059:
+  1269                           
+  1270                           ;main_timer.c: 327:         }
+  1271  0140  3001               	movlw	1
+  1272  0141  00DF               	movwf	btemp+1
+  1273  0142  085F               	movf	btemp+1,w
+  1274  0143  1283               	bcf	3,5	;RP0=0, select bank0
+  1275  0144  07A7               	addwf	som_modo_preparo@t_122,f
+  1276  0145                     l1061:
+  1277  0145  3004               	movlw	4
+  1278  0146  0227               	subwf	som_modo_preparo@t_122,w
+  1279  0147  1C03               	skipc
+  1280  0148  294A               	goto	u341
+  1281  0149  294B               	goto	u340
+  1282  014A                     u341:
+  1283  014A  292B               	goto	l144
+  1284  014B                     u340:
+  1285  014B                     l146:
+  1286  014B  0008               	return
+  1287  014C                     __end_of_som_modo_preparo:
+  1288                           
+  1289                           	psect	text6
+  1290  01A5                     __ptext6:	
+  1291 ;; *************** function _ler_botao *****************
+  1292 ;; Defined at:
+  1293 ;;		line 199 in file "main_timer.c"
+  1294 ;; Parameters:    Size  Location     Type
+  1295 ;;		None
+  1296 ;; Auto vars:     Size  Location     Type
+  1297 ;;  status          1    2[BANK0 ] unsigned char 
+  1298 ;; Return value:  Size  Location     Type
+  1299 ;;                  1    wreg      unsigned char 
+  1300 ;; Registers used:
+  1301 ;;		wreg, status,2, status,0, btemp+1
+  1302 ;; Tracked objects:
+  1303 ;;		On entry : 0/0
+  1304 ;;		On exit  : 0/0
+  1305 ;;		Unchanged: 0/0
+  1306 ;; Data sizes:     COMMON   BANK0
+  1307 ;;      Params:         0       0
+  1308 ;;      Locals:         0       1
+  1309 ;;      Temps:          0       0
+  1310 ;;      Totals:         0       1
+  1311 ;;Total ram usage:        1 bytes
+  1312 ;; Hardware stack levels used:    1
+  1313 ;; Hardware stack levels required when called:    1
+  1314 ;; This function calls:
+  1315 ;;		Nothing
+  1316 ;; This function is called by:
+  1317 ;;		_estado_botao
+  1318 ;;		_cooking
+  1319 ;; This function uses a non-reentrant model
+  1320 ;;
+  1321                           
+  1322                           
+  1323                           ;psect for function _ler_botao
+  1324  01A5                     _ler_botao:
+  1325  01A5                     l1015:	
+  1326                           ;incstack = 0
+  1327                           ; Regs used in _ler_botao: [wreg+status,2+status,0+btemp+1]
+  1328                           
+  1329                           
+  1330                           ;main_timer.c: 201:     char status;;main_timer.c: 202:     if (GP3 == 0){
+  1331  01A5  1283               	bcf	3,5	;RP0=0, select bank0
+  1332  01A6  1985               	btfsc	5,3	;volatile
+  1333  01A7  29A9               	goto	u291
+  1334  01A8  29AA               	goto	u290
+  1335  01A9                     u291:
+  1336  01A9  29B8               	goto	l1025
+  1337  01AA                     u290:
+  1338  01AA                     l1017:
+  1339                           
+  1340                           ;main_timer.c: 203:         _delay(2);
+  1341  01AA  29AB               	nop2	;2 cycle nop
+  1342                           
+  1343                           ;main_timer.c: 204:         if(GP3 == 0){
+  1344  01AB  1283               	bcf	3,5	;RP0=0, select bank0
+  1345  01AC  1985               	btfsc	5,3	;volatile
+  1346  01AD  29AF               	goto	u301
+  1347  01AE  29B0               	goto	u300
+  1348  01AF                     u301:
+  1349  01AF  29BA               	goto	l1027
+  1350  01B0                     u300:
+  1351  01B0                     l1019:
+  1352                           
+  1353                           ;main_timer.c: 205:             cont_botao_press++;
+  1354  01B0  3001               	movlw	1
+  1355  01B1  00DF               	movwf	btemp+1
+  1356  01B2  085F               	movf	btemp+1,w
+  1357  01B3  07B8               	addwf	_cont_botao_press,f
+  1358  01B4                     l1021:
+  1359                           
+  1360                           ;main_timer.c: 206:             cont_pisca_leds = 0;
+  1361  01B4  01B7               	clrf	_cont_pisca_leds
+  1362  01B5                     l1023:
+  1363                           
+  1364                           ;main_timer.c: 207:             status = 1;
+  1365  01B5  01A2               	clrf	ler_botao@status
+  1366  01B6  0AA2               	incf	ler_botao@status,f
+  1367  01B7  29BA               	goto	l1027
+  1368  01B8                     l1025:
+  1369                           
+  1370                           ;main_timer.c: 211:         cont_botao_press = 0;
+  1371  01B8  01B8               	clrf	_cont_botao_press
+  1372                           
+  1373                           ;main_timer.c: 212:         status = 0;
+  1374  01B9  01A2               	clrf	ler_botao@status
+  1375  01BA                     l1027:
+  1376                           
+  1377                           ;main_timer.c: 214:     return status;
+  1378  01BA  0822               	movf	ler_botao@status,w
+  1379  01BB                     l114:
+  1380  01BB  0008               	return
+  1381  01BC                     __end_of_ler_botao:
+  1382                           
+  1383                           	psect	text7
+  1384  01DF                     __ptext7:	
+  1385 ;; *************** function _config_var *****************
+  1386 ;; Defined at:
+  1387 ;;		line 186 in file "main_timer.c"
+  1388 ;; Parameters:    Size  Location     Type
+  1389 ;;		None
+  1390 ;; Auto vars:     Size  Location     Type
+  1391 ;;		None
+  1392 ;; Return value:  Size  Location     Type
+  1393 ;;                  1    wreg      void 
+  1394 ;; Registers used:
+  1395 ;;		status,2
+  1396 ;; Tracked objects:
+  1397 ;;		On entry : 0/0
+  1398 ;;		On exit  : 0/0
+  1399 ;;		Unchanged: 0/0
+  1400 ;; Data sizes:     COMMON   BANK0
+  1401 ;;      Params:         0       0
+  1402 ;;      Locals:         0       0
+  1403 ;;      Temps:          0       0
+  1404 ;;      Totals:         0       0
+  1405 ;;Total ram usage:        0 bytes
+  1406 ;; Hardware stack levels used:    1
+  1407 ;; Hardware stack levels required when called:    1
+  1408 ;; This function calls:
+  1409 ;;		Nothing
+  1410 ;; This function is called by:
+  1411 ;;		_main
+  1412 ;; This function uses a non-reentrant model
+  1413 ;;
+  1414                           
+  1415                           
+  1416                           ;psect for function _config_var
+  1417  01DF                     _config_var:
+  1418  01DF                     l1089:	
+  1419                           ;incstack = 0
+  1420                           ; Regs used in _config_var: [status,2]
+  1421                           
+  1422                           
+  1423                           ;main_timer.c: 187:     cont_botao_press = 0;
+  1424  01DF  1283               	bcf	3,5	;RP0=0, select bank0
+  1425  01E0  01B8               	clrf	_cont_botao_press
+  1426                           
+  1427                           ;main_timer.c: 188:     cont_pisca_leds = 0;
+  1428  01E1  01B7               	clrf	_cont_pisca_leds
+  1429                           
+  1430                           ;main_timer.c: 189:     modo_timer = 0x00;
+  1431  01E2  01B4               	clrf	_modo_timer
+  1432                           
+  1433                           ;main_timer.c: 190:     bt_estado_atual = 0;
+  1434  01E3  01B6               	clrf	_bt_estado_atual
+  1435                           
+  1436                           ;main_timer.c: 191:     bt_estado_anterior = 0;
+  1437  01E4  01B5               	clrf	_bt_estado_anterior
+  1438                           
+  1439                           ;main_timer.c: 192:     bt_num_toques = 0;
+  1440  01E5  01B9               	clrf	_bt_num_toques
+  1441                           
+  1442                           ;main_timer.c: 193:     cont_toques = 0;
+  1443  01E6  01B3               	clrf	_cont_toques
+  1444                           
+  1445                           ;main_timer.c: 194:     timer_out = 0;
+  1446  01E7  01B2               	clrf	_timer_out
+  1447  01E8                     l108:
+  1448  01E8  0008               	return
+  1449  01E9                     __end_of_config_var:
+  1450                           
+  1451                           	psect	text8
+  1452  01F2                     __ptext8:	
+  1453 ;; *************** function _config_osc *****************
+  1454 ;; Defined at:
+  1455 ;;		line 144 in file "main_timer.c"
+  1456 ;; Parameters:    Size  Location     Type
+  1457 ;;		None
+  1458 ;; Auto vars:     Size  Location     Type
+  1459 ;;		None
+  1460 ;; Return value:  Size  Location     Type
+  1461 ;;                  1    wreg      void 
+  1462 ;; Registers used:
+  1463 ;;		None
+  1464 ;; Tracked objects:
+  1465 ;;		On entry : 0/0
+  1466 ;;		On exit  : 0/0
+  1467 ;;		Unchanged: 0/0
+  1468 ;; Data sizes:     COMMON   BANK0
+  1469 ;;      Params:         0       0
+  1470 ;;      Locals:         0       0
+  1471 ;;      Temps:          0       0
+  1472 ;;      Totals:         0       0
+  1473 ;;Total ram usage:        0 bytes
+  1474 ;; Hardware stack levels used:    1
+  1475 ;; Hardware stack levels required when called:    1
+  1476 ;; This function calls:
+  1477 ;;		Nothing
+  1478 ;; This function is called by:
+  1479 ;;		_main
+  1480 ;; This function uses a non-reentrant model
+  1481 ;;
+  1482                           
+  1483                           
+  1484                           ;psect for function _config_osc
+  1485  01F2                     _config_osc:
+  1486  01F2                     l1063:	
+  1487                           ;incstack = 0
+  1488                           ; Regs used in _config_osc: []
+  1489                           
+  1490  01F2  1683               	bsf	3,5	;# 
+  1491  01F3  23FF               	call	1023	;# 
+  1492  01F4  0090               	movwf	144	;# 
+  1493  01F5  1283               	bcf	3,5	;# 
+  1494  01F6                     l99:
+  1495  01F6  0008               	return
+  1496  01F7                     __end_of_config_osc:
+  1497                           
+  1498                           	psect	text9
+  1499  01BC                     __ptext9:	
+  1500 ;; *************** function _config_mcu *****************
+  1501 ;; Defined at:
+  1502 ;;		line 165 in file "main_timer.c"
+  1503 ;; Parameters:    Size  Location     Type
+  1504 ;;		None
+  1505 ;; Auto vars:     Size  Location     Type
+  1506 ;;		None
+  1507 ;; Return value:  Size  Location     Type
+  1508 ;;                  1    wreg      void 
+  1509 ;; Registers used:
+  1510 ;;		wreg, status,2
+  1511 ;; Tracked objects:
+  1512 ;;		On entry : 0/0
+  1513 ;;		On exit  : 0/0
+  1514 ;;		Unchanged: 0/0
+  1515 ;; Data sizes:     COMMON   BANK0
+  1516 ;;      Params:         0       0
+  1517 ;;      Locals:         0       0
+  1518 ;;      Temps:          0       0
+  1519 ;;      Totals:         0       0
+  1520 ;;Total ram usage:        0 bytes
+  1521 ;; Hardware stack levels used:    1
+  1522 ;; Hardware stack levels required when called:    1
+  1523 ;; This function calls:
+  1524 ;;		Nothing
+  1525 ;; This function is called by:
+  1526 ;;		_main
+  1527 ;; This function uses a non-reentrant model
+  1528 ;;
+  1529                           
+  1530                           
+  1531                           ;psect for function _config_mcu
+  1532  01BC                     _config_mcu:
+  1533  01BC                     l1065:	
+  1534                           ;incstack = 0
+  1535                           ; Regs used in _config_mcu: [wreg+status,2]
+  1536                           
+  1537                           
+  1538                           ;main_timer.c: 166:     ANSEL = 0b00000000;
+  1539  01BC  1683               	bsf	3,5	;RP0=1, select bank1
+  1540  01BD  019F               	clrf	31	;volatile
+  1541  01BE                     l1067:
+  1542                           
+  1543                           ;main_timer.c: 167:     CMCON = 0b00000111;
+  1544  01BE  3007               	movlw	7
+  1545  01BF  1283               	bcf	3,5	;RP0=0, select bank0
+  1546  01C0  0099               	movwf	25	;volatile
+  1547  01C1                     l1069:
+  1548                           
+  1549                           ;main_timer.c: 168:     TRISIO = 0b11001000;
+  1550  01C1  30C8               	movlw	200
+  1551  01C2  1683               	bsf	3,5	;RP0=1, select bank1
+  1552  01C3  0085               	movwf	5	;volatile
+  1553                           
+  1554                           ;main_timer.c: 169:     WPU = 0b00000000;
+  1555  01C4  0195               	clrf	21	;volatile
+  1556  01C5                     l1071:
+  1557                           
+  1558                           ;main_timer.c: 170:     GP0 = 0;
+  1559  01C5  1283               	bcf	3,5	;RP0=0, select bank0
+  1560  01C6  1005               	bcf	5,0	;volatile
+  1561  01C7                     l1073:
+  1562                           
+  1563                           ;main_timer.c: 171:     GP1 = 0;
+  1564  01C7  1085               	bcf	5,1	;volatile
+  1565  01C8                     l1075:
+  1566                           
+  1567                           ;main_timer.c: 172:     GP2 = 0;
+  1568  01C8  1105               	bcf	5,2	;volatile
+  1569  01C9                     l1077:
+  1570                           
+  1571                           ;main_timer.c: 173:     GP4 = 1;
+  1572  01C9  1605               	bsf	5,4	;volatile
+  1573  01CA                     l1079:
+  1574                           
+  1575                           ;main_timer.c: 174:     GP5 = 1;
+  1576  01CA  1685               	bsf	5,5	;volatile
+  1577  01CB                     l1081:
+  1578                           
+  1579                           ;main_timer.c: 175:     GIE = 1;
+  1580  01CB  178B               	bsf	11,7	;volatile
+  1581  01CC                     l1083:
+  1582                           
+  1583                           ;main_timer.c: 176:     PEIE= 1;
+  1584  01CC  170B               	bsf	11,6	;volatile
+  1585  01CD                     l1085:
+  1586                           
+  1587                           ;main_timer.c: 177:     GPIE = 1;
+  1588  01CD  158B               	bsf	11,3	;volatile
+  1589  01CE                     l1087:
+  1590                           
+  1591                           ;main_timer.c: 178:     IOC3= 1;
+  1592  01CE  1683               	bsf	3,5	;RP0=1, select bank1
+  1593  01CF  1596               	bsf	22,3	;volatile
+  1594  01D0                     l105:
+  1595  01D0  0008               	return
+  1596  01D1                     __end_of_config_mcu:
+  1597                           
+  1598                           	psect	text10
+  1599  01E9                     __ptext10:	
+  1600 ;; *************** function _config_TM1 *****************
+  1601 ;; Defined at:
+  1602 ;;		line 338 in file "main_timer.c"
+  1603 ;; Parameters:    Size  Location     Type
+  1604 ;;		None
+  1605 ;; Auto vars:     Size  Location     Type
+  1606 ;;		None
+  1607 ;; Return value:  Size  Location     Type
+  1608 ;;                  1    wreg      void 
+  1609 ;; Registers used:
+  1610 ;;		wreg, status,2
+  1611 ;; Tracked objects:
+  1612 ;;		On entry : 0/0
+  1613 ;;		On exit  : 0/0
+  1614 ;;		Unchanged: 0/0
+  1615 ;; Data sizes:     COMMON   BANK0
+  1616 ;;      Params:         0       0
+  1617 ;;      Locals:         0       0
+  1618 ;;      Temps:          0       0
+  1619 ;;      Totals:         0       0
+  1620 ;;Total ram usage:        0 bytes
+  1621 ;; Hardware stack levels used:    1
+  1622 ;; Hardware stack levels required when called:    1
+  1623 ;; This function calls:
+  1624 ;;		Nothing
+  1625 ;; This function is called by:
+  1626 ;;		_main
+  1627 ;; This function uses a non-reentrant model
+  1628 ;;
+  1629                           
+  1630                           
+  1631                           ;psect for function _config_TM1
+  1632  01E9                     _config_TM1:
+  1633  01E9                     l1091:	
+  1634                           ;incstack = 0
+  1635                           ; Regs used in _config_TM1: [wreg+status,2]
+  1636                           
+  1637                           
+  1638                           ;main_timer.c: 339:     T1CON = 0b01100000;
+  1639  01E9  3060               	movlw	96
+  1640  01EA  1283               	bcf	3,5	;RP0=0, select bank0
+  1641  01EB  0090               	movwf	16	;volatile
+  1642  01EC                     l1093:
+  1643                           
+  1644                           ;main_timer.c: 340:     TMR1IE = 1;
+  1645  01EC  1683               	bsf	3,5	;RP0=1, select bank1
+  1646  01ED  140C               	bsf	12,0	;volatile
+  1647  01EE                     l1095:
+  1648                           
+  1649                           ;main_timer.c: 341:     TMR1L = 0x00;
+  1650  01EE  1283               	bcf	3,5	;RP0=0, select bank0
+  1651  01EF  018E               	clrf	14	;volatile
+  1652  01F0                     l1097:
+  1653                           
+  1654                           ;main_timer.c: 342:     TMR1H = 0x00;
+  1655  01F0  018F               	clrf	15	;volatile
+  1656  01F1                     l149:
+  1657  01F1  0008               	return
+  1658  01F2                     __end_of_config_TM1:
+  1659                           
+  1660                           	psect	text11
+  1661  017D                     __ptext11:	
+  1662 ;; *************** function _isr *****************
+  1663 ;; Defined at:
+  1664 ;;		line 350 in file "main_timer.c"
+  1665 ;; Parameters:    Size  Location     Type
+  1666 ;;		None
+  1667 ;; Auto vars:     Size  Location     Type
+  1668 ;;		None
+  1669 ;; Return value:  Size  Location     Type
+  1670 ;;                  1    wreg      void 
+  1671 ;; Registers used:
+  1672 ;;		status,2
+  1673 ;; Tracked objects:
+  1674 ;;		On entry : 0/0
+  1675 ;;		On exit  : 0/0
+  1676 ;;		Unchanged: 0/0
+  1677 ;; Data sizes:     COMMON   BANK0
+  1678 ;;      Params:         0       0
+  1679 ;;      Locals:         0       0
+  1680 ;;      Temps:          0       2
+  1681 ;;      Totals:         0       2
+  1682 ;;Total ram usage:        2 bytes
+  1683 ;; Hardware stack levels used:    1
+  1684 ;; This function calls:
+  1685 ;;		Nothing
+  1686 ;; This function is called by:
+  1687 ;;		Interrupt level 1
+  1688 ;; This function uses a non-reentrant model
+  1689 ;;
+  1690                           
+  1691                           
+  1692                           ;psect for function _isr
+  1693  017D                     _isr:
+  1694  017D                     i1l1245:
+  1695                           
+  1696                           ;main_timer.c: 356:     if ((GPIE && GPIF) ==1){
+  1697  017D  1D8B               	btfss	11,3	;volatile
+  1698  017E  2980               	goto	u51_21
+  1699  017F  2981               	goto	u51_20
+  1700  0180                     u51_21:
+  1701  0180  298E               	goto	i1l154
+  1702  0181                     u51_20:
+  1703  0181                     i1l1247:
+  1704  0181  1C0B               	btfss	11,0	;volatile
+  1705  0182  2984               	goto	u52_21
+  1706  0183  2985               	goto	u52_20
+  1707  0184                     u52_21:
+  1708  0184  298E               	goto	i1l154
+  1709  0185                     u52_20:
+  1710  0185                     i1l1249:
+  1711                           
+  1712                           ;main_timer.c: 357:         if (GP3 == 1 || GP3 == 0){
+  1713  0185  1985               	btfsc	5,3	;volatile
+  1714  0186  2988               	goto	u53_21
+  1715  0187  2989               	goto	u53_20
+  1716  0188                     u53_21:
+  1717  0188  298D               	goto	i1l157
+  1718  0189                     u53_20:
+  1719  0189                     i1l1251:
+  1720  0189  1985               	btfsc	5,3	;volatile
+  1721  018A  298C               	goto	u54_21
+  1722  018B  298D               	goto	u54_20
+  1723  018C                     u54_21:
+  1724  018C  298E               	goto	i1l154
+  1725  018D                     u54_20:
+  1726  018D                     i1l157:
+  1727                           
+  1728                           ;main_timer.c: 358:         GPIF = 0;
+  1729  018D  100B               	bcf	11,0	;volatile
+  1730  018E                     i1l154:	
+  1731                           ;main_timer.c: 360:     }
+  1732                           
+  1733                           
+  1734                           ;main_timer.c: 367:     if(TMR1IE == 1 && TMR1IF== 1){
+  1735  018E  1683               	bsf	3,5	;RP0=1, select bank1
+  1736  018F  1C0C               	btfss	12,0	;volatile
+  1737  0190  2992               	goto	u55_21
+  1738  0191  2993               	goto	u55_20
+  1739  0192                     u55_21:
+  1740  0192  299D               	goto	i1l159
+  1741  0193                     u55_20:
+  1742  0193                     i1l1253:
+  1743  0193  1283               	bcf	3,5	;RP0=0, select bank0
+  1744  0194  1C0C               	btfss	12,0	;volatile
+  1745  0195  2997               	goto	u56_21
+  1746  0196  2998               	goto	u56_20
+  1747  0197                     u56_21:
+  1748  0197  299D               	goto	i1l159
+  1749  0198                     u56_20:
+  1750  0198                     i1l1255:
+  1751                           
+  1752                           ;main_timer.c: 368:         timer_out = 1;
+  1753  0198  01B2               	clrf	_timer_out
+  1754  0199  0AB2               	incf	_timer_out,f
+  1755                           
+  1756                           ;main_timer.c: 369:         TMR1IF = 0;
+  1757  019A  100C               	bcf	12,0	;volatile
+  1758  019B                     i1l1257:
+  1759                           
+  1760                           ;main_timer.c: 370:         TMR1L = 0x00;
+  1761  019B  018E               	clrf	14	;volatile
+  1762                           
+  1763                           ;main_timer.c: 371:         TMR1H = 0x00;
+  1764  019C  018F               	clrf	15	;volatile
+  1765  019D                     i1l159:
+  1766  019D  1283               	bcf	3,5	;RP0=0, select bank0
+  1767  019E  0821               	movf	??_isr+1,w
+  1768  019F  008A               	movwf	10
+  1769  01A0  0E20               	swapf	??_isr^0,w
+  1770  01A1  0083               	movwf	3
+  1771  01A2  0EDE               	swapf	btemp,f
+  1772  01A3  0E5E               	swapf	btemp,w
+  1773  01A4  0009               	retfie
+  1774  01A5                     __end_of_isr:
+  1775  005E                     btemp	set	94	;btemp
+  1776  005E                     wtemp0	set	94
+  1777                           
+  1778                           	psect	intentry
+  1779  0004                     __pintentry:	
+  1780                           ;incstack = 0
+  1781                           ; Regs used in _isr: [status,2]
+  1782                           
+  1783  0004                     interrupt_function:
+  1784  005E                     saved_w	set	btemp
+  1785  0004  00DE               	movwf	btemp
+  1786  0005  0E03               	swapf	3,w
+  1787  0006  1283               	bcf	3,5	;RP0=0, select bank0
+  1788  0007  00A0               	movwf	??_isr
+  1789  0008  080A               	movf	10,w
+  1790  0009  00A1               	movwf	??_isr+1
+  1791  000A  297D               	ljmp	_isr
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         7
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62     18      26
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _isr in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_cooking
+    _estado_botao->_ler_botao
+    _cooking->_som_modo_preparo
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0     327
+                                             15 BANK0      3     3      0
+                         _config_TM1
+                         _config_mcu
+                         _config_osc
+                         _config_var
+                            _cooking
+                       _estado_botao
+                      _modo_lowpower
+                                _som
+ ---------------------------------------------------------------------------------
+ (1) _som                                                  2     2      0       0
+                                              2 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _modo_lowpower                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _estado_botao                                         3     3      0      49
+                                              3 BANK0      3     3      0
+                          _ler_botao
+ ---------------------------------------------------------------------------------
+ (1) _cooking                                              7     7      0     278
+                                              8 BANK0      7     7      0
+                          _ler_botao
+                   _som_modo_preparo
+ ---------------------------------------------------------------------------------
+ (2) _som_modo_preparo                                     6     6      0     136
+                                              2 BANK0      6     6      0
+ ---------------------------------------------------------------------------------
+ (2) _ler_botao                                            1     1      0      24
+                                              2 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _config_var                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _config_osc                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _config_mcu                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _config_TM1                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _isr                                                  2     2      0       0
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _config_TM1
+   _config_mcu
+   _config_osc
+   _config_var
+   _cooking
+     _ler_botao
+     _som_modo_preparo
+   _estado_botao
+     _ler_botao
+   _modo_lowpower
+   _som
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            3E      0       0       3        0.0%
+BANK0               3E     12      1A       4       41.9%
+ABS                  0      0      1A       5        0.0%
+DATA                 0      0      1A       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
+Symbol Table                                                                                   Thu Sep 17 16:43:15 2020
+
+                       l87 0082                         l99 01F6                        l102 01FA  
+                      l105 01D0                        l114 01BB                        l122 0164  
+                      l123 017C                        l108 01E8                        l141 00FF  
+                      l133 00F2                        l134 00F6                        l144 012B  
+                      l137 01DE                        l146 014B                        l149 01F1  
+                      _GP0 0028                        _GP1 0029                        _GP2 002A  
+                      _GP3 002B                        _GP4 002C                        _GP5 002D  
+                      _GIE 005F                        u300 01B0                        u301 01AF  
+                      u310 00FE                        u311 00FD                        u320 0125  
+                      u400 00E3                        u321 0124                        u401 00E2  
+                      u330 012A                        u410 00E9                        u331 0129  
+                      u411 00E8                        u340 014B                        u420 00F2  
+                      u500 0089                        u341 014A                        u421 00F1  
+                      u501 0088                        u350 0157                        u430 0024  
+                      u351 0156                        u431 0023                        u360 0097  
+                      u440 0030                        u361 0096                        u441 002F  
+                      u290 01AA                        u370 00A0                        u450 0036  
+                      u291 01A9                        u371 009F                        u451 0035  
+                      u380 00AA                        u460 003B                        u381 00A9  
+                      u461 003A                        u390 00B0                        u470 0048  
+                      u607 00C2                        u391 00AF                        u471 0047  
+                      u480 004F                        u617 00D2                        u481 004E  
+                      u490 0079                        u627 0106                        u491 0078  
+                      u637 0114                        u647 0130                        u657 013B  
+                      u577 0057                        u587 0067                        u597 01D7  
+                      _WPU 0095   __end_of_som_modo_preparo 014C                        _isr 017D  
+                      _som 01D1      __end_of_modo_lowpower 01FB                       l1021 01B4  
+                     l1101 0151                       l1023 01B5                       l1015 01A5  
+                     l1031 00F9                       l1103 0157                       l1017 01AA  
+                     l1025 01B8                       l1041 010C                       l1033 00FE  
+                     l1105 015C                       l1113 0167                       l1201 0030  
+                     l1019 01B0                       l1027 01BA                       l1043 011A  
+                     l1131 0091                       l1107 015E                       l1115 0177  
+                     l1211 003F                       l1203 0036                       l1061 0145  
+                     l1045 011F                       l1141 00A5                       l1133 0092  
+                     l1117 017B                       l1109 0162                       l1125 01D1  
+                     l1221 0051                       l1205 003B                       l1213 0043  
+                     l1071 01C5                       l1063 01F2                       l1055 012C  
+                     l1039 0100                       l1047 0125                       l1151 00B6  
+                     l1143 00AA                       l1135 0097                       l1127 01D3  
+                     l1231 0079                       l1223 005E                       l1215 0048  
+                     l1207 003C                       l1081 01CB                       l1073 01C7  
+                     l1065 01BC                       l1057 0135                       l1049 012A  
+                     l1161 00BC                       l1145 00AB                       l1153 00B8  
+                     l1137 009B                       l1129 01DC                       l1241 008B  
+                     l1233 007A                       l1225 0060                       l1217 004A  
+                     l1209 003E                       l1091 01E9                       l1083 01CC  
+                     l1075 01C8                       l1067 01BE                       l1059 0140  
+                     l1171 00DE                       l1163 00C9                       l1155 00B9  
+                     l1147 00B0                       l1139 00A0                       l1243 008C  
+                     l1235 007D                       l1227 006E                       l1219 004F  
+                     l1093 01EC                       l1085 01CD                       l1077 01C9  
+                     l1069 01C1                       l1181 00F4                       l1173 00E3  
+                     l1165 00CB                       l1157 00BA                       l1149 00B2  
+                     l1229 0073                       l1237 0089                       l1095 01EE  
+                     l1087 01CE                       l1079 01CA                       l1175 00E9  
+                     l1167 00CC                       l1159 00BB                       l1183 01F7  
+                     l1239 008A                       l1191 001A                       l1097 01F0  
+                     l1089 01DF                       l1177 00EB                       l1169 00D9  
+                     l1193 001F                       l1185 0016                       l1179 00ED  
+                     l1099 014C                       l1195 0024                       l1187 0017  
+                     l1197 0026                       l1189 0018                       l1279 016F  
+                     l1199 002B                       ?_isr 0020                       ?_som 0020  
+                     _IOC3 04B3                       _GPIE 005B                       _GPIF 0058  
+                     _PEIE 005E                       _main 0016                       btemp 005E  
+                     start 000B                      ??_isr 0020                      ??_som 0022  
+                    OSCCAL 0090                      STATUS 0003                      ?_main 0020  
+                    _CMCON 0019                      _ANSEL 009F                      _T1CON 0010  
+                    i1l154 018E                      i1l157 018D                      i1l159 019D  
+                    _TMR1H 000F                      _TMR1L 000E                      u51_20 0181  
+                    u51_21 0180                      u52_20 0185                      u52_21 0184  
+                    u53_20 0189                      u53_21 0188                      u54_20 018D  
+                    u54_21 018C                      u55_20 0193                      u55_21 0192  
+                    u56_20 0198                      u56_21 0197           _cont_botao_press 0038  
+          __end_of_cooking 00F7                      pclath 000A                      status 0003  
+                    wtemp0 005E               cooking@tempo 002D            _cont_pisca_leds 0037  
+          __initialization 000C               __end_of_main 008F                     ??_main 002F  
+            ?_estado_botao 0020                     i1l1251 0189                     i1l1253 0193  
+                   i1l1245 017D                     i1l1255 0198                     i1l1247 0181  
+                   i1l1257 019B                     i1l1249 0185                     _TMR1IE 0460  
+                   _TMR1IF 0060                     _TMR1ON 0080                     _TRISIO 0085  
+           ??_estado_botao 0023                  ??_cooking 0028                     saved_w 005E  
+  __end_of__initialization 0014             __pcstackCOMMON 0000          ?_som_modo_preparo 0020  
+       ??_som_modo_preparo 0022                 __pbssBANK0 0032         __size_of_ler_botao 0017  
+               __pmaintext 0016            _bt_estado_atual 0036                 __pintentry 0004  
+               _config_TM1 01E9                 _config_mcu 01BC                 _config_osc 01F2  
+               _config_var 01DF       __end_of_estado_botao 017D     __size_of_modo_lowpower 0004  
+                  __ptext1 01D1                    __ptext2 01F7                    __ptext3 014C  
+                  __ptext4 008F                    __ptext5 00F7                    __ptext6 01A5  
+                  __ptext7 01DF                    __ptext8 01F2                    __ptext9 01BC  
+        __end_of_ler_botao 01BC                    _cooking 008F               __size_of_isr 0028  
+             __size_of_som 000E                 _modo_timer 0034       end_of_initialization 0014  
+        som_modo_preparo@t 0026                ?_config_TM1 0020                ?_config_mcu 0020  
+              ?_config_osc 0020                ?_config_var 0020              _modo_lowpower 01F7  
+      start_initialization 000C             ?_modo_lowpower 0020                __end_of_isr 01A5  
+              __end_of_som 01DF      __size_of_estado_botao 0031  __size_of_som_modo_preparo 0055  
+      __size_of_config_TM1 0009        __size_of_config_mcu 0015        __size_of_config_osc 0005  
+      __size_of_config_var 000A               _estado_botao 014C                  ___latbits 0000  
+            __pcstackBANK0 0020                  __pnvBANK0 0039         _bt_estado_anterior 0035  
+                 ?_cooking 0020      som_modo_preparo@t_122 0027            ??_modo_lowpower 0000  
+    cooking@timer_cont_min 002E      cooking@timer_cont_seg 002B                  _ler_botao 01A5  
+        interrupt_function 0004            ler_botao@status 0022                  _timer_out 0032  
+             ??_config_TM1 0000                _cont_toques 0033               ??_config_mcu 0000  
+             ??_config_osc 0000               ??_config_var 0000                 ?_ler_botao 0020  
+         _som_modo_preparo 00F7         __end_of_config_TM1 01F2         __end_of_config_mcu 01D1  
+       __end_of_config_osc 01F7         __end_of_config_var 01E9           __size_of_cooking 0068  
+                 __ptext10 01E9                   __ptext11 017D       som_modo_preparo@modo 0025  
+            __size_of_main 0079  estado_botao@estado_toques 0025                ??_ler_botao 0000  
+                 intlevel1 0000              _bt_num_toques 0039            cooking@modo_fim 002C  

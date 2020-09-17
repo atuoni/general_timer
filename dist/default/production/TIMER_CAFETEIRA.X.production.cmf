@@ -1,0 +1,478 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/TIMER_CAFETEIRA.X.production.o
+cinit CODE 0 C C A 2
+text1 CODE 0 1D1 1D1 E 2
+text2 CODE 0 1F7 1F7 4 2
+text3 CODE 0 14C 14C 31 2
+text4 CODE 0 8F 8F 68 2
+text5 CODE 0 F7 F7 55 2
+text6 CODE 0 1A5 1A5 17 2
+text7 CODE 0 1DF 1DF A 2
+text8 CODE 0 1F2 1F2 5 2
+text9 CODE 0 1BC 1BC 15 2
+text10 CODE 0 1E9 1E9 9 2
+text11 CODE 0 17D 17D 28 2
+nvBANK0 BANK0 1 39 39 1 1
+maintext CODE 0 16 16 79 2
+cstackBANK0 BANK0 1 20 20 12 1
+intentry CODE 0 4 4 7 2
+bssBANK0 BANK0 1 32 32 7 1
+$/tmp/xcXPdcgAl.o
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 B B 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 3A-5D 1
+BANK0 3A-5D 1
+CONST 1-3 2
+CONST 1FB-3FE 2
+ENTRY 1-3 2
+ENTRY 1FB-3FE 2
+IDLOC 2000-2003 2
+STACK 3A-5D 1
+CODE 1-3 2
+CODE 1FB-3FE 2
+SFR0 0-1F 1
+SFR1 80-DD 1
+CONFIG 2007-2007 2
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 1FB-3FE 2
+STRING 1-3 2
+STRING 1FB-3FE 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/TIMER_CAFETEIRA.X.production.o
+C cinit CODE >297:/tmp/xcXiGPjJB.s
+C cinit CODE >300:/tmp/xcXiGPjJB.s
+C cinit CODE >329:/tmp/xcXiGPjJB.s
+D cinit CODE >330:/tmp/xcXiGPjJB.s
+E cinit CODE >331:/tmp/xcXiGPjJB.s
+F cinit CODE >332:/tmp/xcXiGPjJB.s
+10 cinit CODE >333:/tmp/xcXiGPjJB.s
+11 cinit CODE >334:/tmp/xcXiGPjJB.s
+12 cinit CODE >335:/tmp/xcXiGPjJB.s
+13 cinit CODE >336:/tmp/xcXiGPjJB.s
+14 cinit CODE >342:/tmp/xcXiGPjJB.s
+14 cinit CODE >344:/tmp/xcXiGPjJB.s
+15 cinit CODE >345:/tmp/xcXiGPjJB.s
+4 intentry CODE >350:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+17D text11 CODE >350:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+17D text11 CODE >356:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+185 text11 CODE >357:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+18D text11 CODE >358:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+18E text11 CODE >360:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+18E text11 CODE >367:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+198 text11 CODE >368:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+19A text11 CODE >369:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+19B text11 CODE >370:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+19C text11 CODE >371:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+19D text11 CODE >374:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E9 text10 CODE >338:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E9 text10 CODE >339:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1EC text10 CODE >340:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1EE text10 CODE >341:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F0 text10 CODE >342:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F1 text10 CODE >343:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1BC text9 CODE >165:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1BC text9 CODE >166:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1BE text9 CODE >167:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C1 text9 CODE >168:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C4 text9 CODE >169:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C5 text9 CODE >170:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C7 text9 CODE >171:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C8 text9 CODE >172:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1C9 text9 CODE >173:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1CA text9 CODE >174:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1CB text9 CODE >175:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1CC text9 CODE >176:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1CD text9 CODE >177:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1CE text9 CODE >178:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1D0 text9 CODE >180:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F2 text8 CODE >144:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F2 text8 CODE >145:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F3 text8 CODE >146:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F4 text8 CODE >147:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F5 text8 CODE >148:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F6 text8 CODE >149:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1DF text7 CODE >186:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1DF text7 CODE >187:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E1 text7 CODE >188:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E2 text7 CODE >189:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E3 text7 CODE >190:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E4 text7 CODE >191:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E5 text7 CODE >192:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E6 text7 CODE >193:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E7 text7 CODE >194:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1E8 text7 CODE >195:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1A5 text6 CODE >199:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1A5 text6 CODE >202:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1AA text6 CODE >203:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1AB text6 CODE >204:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1B0 text6 CODE >205:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1B4 text6 CODE >206:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1B5 text6 CODE >207:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1B8 text6 CODE >211:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1B9 text6 CODE >212:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1BA text6 CODE >214:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1BB text6 CODE >215:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F7 text5 CODE >311:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F9 text5 CODE >312:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+FE text5 CODE >314:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+FF text5 CODE >315:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+100 text5 CODE >316:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+10C text5 CODE >317:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+10E text5 CODE >318:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+11A text5 CODE >319:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+125 text5 CODE >321:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+12A text5 CODE >322:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+12B text5 CODE >323:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+12C text5 CODE >324:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+135 text5 CODE >325:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+137 text5 CODE >326:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+140 text5 CODE >327:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+14B text5 CODE >329:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+8F text4 CODE >253:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+91 text4 CODE >257:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+92 text4 CODE >258:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+97 text4 CODE >259:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+9B text4 CODE >261:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+A0 text4 CODE >262:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+A5 text4 CODE >265:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+AA text4 CODE >266:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+AB text4 CODE >267:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+B0 text4 CODE >268:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+B2 text4 CODE >269:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+B6 text4 CODE >271:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+B8 text4 CODE >273:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+B9 text4 CODE >274:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+BA text4 CODE >275:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+BB text4 CODE >276:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+BC text4 CODE >277:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+C9 text4 CODE >278:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+CB text4 CODE >279:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+CC text4 CODE >280:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+D9 text4 CODE >282:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+DE text4 CODE >284:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+E9 text4 CODE >285:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+EB text4 CODE >286:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+EC text4 CODE >287:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+ED text4 CODE >264:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F2 text4 CODE >290:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F3 text4 CODE >291:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F4 text4 CODE >292:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+F6 text4 CODE >293:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+14C text3 CODE >220:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+14C text3 CODE >225:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+151 text3 CODE >226:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+157 text3 CODE >227:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+15C text3 CODE >231:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+15D text3 CODE >232:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+15E text3 CODE >235:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+162 text3 CODE >236:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+163 text3 CODE >237:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+164 text3 CODE >239:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+164 text3 CODE >240:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+166 text3 CODE >241:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+167 text3 CODE >243:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+177 text3 CODE >244:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+17B text3 CODE >245:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+17C text3 CODE >246:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F7 text2 CODE >154:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F7 text2 CODE >155:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F8 text2 CODE >156:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F9 text2 CODE >157:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1FA text2 CODE >158:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1D1 text1 CODE >301:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1D1 text1 CODE >302:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1D3 text1 CODE >303:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1DC text1 CODE >304:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1DE text1 CODE >305:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+16 maintext CODE >92:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+16 maintext CODE >94:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+17 maintext CODE >95:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+18 maintext CODE >96:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+19 maintext CODE >97:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1A maintext CODE >100:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+1F maintext CODE >101:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+24 maintext CODE >102:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+25 maintext CODE >103:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+26 maintext CODE >104:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+2B maintext CODE >106:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+3B maintext CODE >107:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+3C maintext CODE >108:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+3E maintext CODE >109:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+3F maintext CODE >110:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+43 maintext CODE >113:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+48 maintext CODE >114:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+49 maintext CODE >115:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+4A maintext CODE >117:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+4F maintext CODE >118:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+50 maintext CODE >119:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+51 maintext CODE >121:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+5E maintext CODE >122:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+60 maintext CODE >123:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+61 maintext CODE >124:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+6E maintext CODE >125:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+73 maintext CODE >126:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+79 maintext CODE >127:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+7A maintext CODE >128:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+7D maintext CODE >129:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+82 maintext CODE >103:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+82 maintext CODE >131:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+89 maintext CODE >133:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+8A maintext CODE >134:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+8B maintext CODE >135:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+8C maintext CODE >136:/home/amauri/MPLABXProjects/TIMER_CAFETEIRA.X/main_timer.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hspace_0 7FE 0 ABS 0 - -
+__Hspace_1 7FE 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hstrings 7FE 0 ABS 0 strings -
+_GPIE 5B 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GPIF 58 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_IOC3 4B3 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXPdcgAl.o
+_main 2C 0 CODE 0 maintext dist/default/production/TIMER_CAFETEIRA.X.production.o
+btemp 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+start 16 0 CODE 0 init /tmp/xcXPdcgAl.o
+__size_of_main 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_som_modo_preparo 1EE 0 CODE 0 text5 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_config_TM1 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_config_mcu 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_config_osc 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_config_var 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+estado_botao@estado_toques 25 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+_timer_out 32 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXPdcgAl.o
+wtemp0 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+cooking@modo_fim 2C 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hclrtext 7FE 0 ABS 0 clrtext -
+__end_of_ler_botao 378 0 CODE 0 text6 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_ler_botao 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_modo_timer 34 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_ler_botao 34A 0 CODE 0 text6 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_cont_pisca_leds 37 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Lmaintext 7FE 0 ABS 0 maintext -
+__LnvBANK0 7FE 0 ABS 0 nvBANK0 -
+__end_of_som_modo_preparo 298 0 CODE 0 text5 dist/default/production/TIMER_CAFETEIRA.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXPdcgAl.o
+___stacklo 0 0 ABS 0 - /tmp/xcXPdcgAl.o
+_modo_lowpower 3EE 0 CODE 0 text2 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_som_modo_preparo 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_bt_num_toques 39 0 BANK0 1 nvBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+start_initialization 18 0 CODE 0 cinit dist/default/production/TIMER_CAFETEIRA.X.production.o
+_bt_estado_anterior 35 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+som_modo_preparo@t_122 27 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TMR1IE 460 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TMR1IF 60 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TMR1ON 80 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TRISIO 85 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+cooking@timer_cont_min 2E 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+cooking@timer_cont_seg 2B 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXPdcgAl.o
+__Hbank0 7FE 0 ABS 0 bank0 -
+__Hbank1 7FE 0 BANK1 1 bank1 -
+__Hcinit 2C 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__size_of_cooking 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hmaintext 7FE 0 ABS 0 maintext -
+__Hcommon 7FE 0 ABS 0 common -
+__Lbank0 7FE 0 ABS 0 bank0 -
+__Lbank1 7FE 0 BANK1 1 bank1 -
+__Lcinit 18 0 CODE 0 cinit -
+ler_botao@status 22 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Lstack 0 0 STACK 2 stack -
+_cont_botao_press 38 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+som_modo_preparo@t 26 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Habs1 7FE 0 ABS 0 abs1 -
+__Hcode 7FE 0 ABS 0 code -
+__Hinit 16 0 CODE 0 init -
+__Hsfr0 7FE 0 ABS 0 sfr0 -
+__Hsfr1 7FE 0 ABS 0 sfr1 -
+__Htext 7FE 0 ABS 0 text -
+__Labs1 7FE 0 ABS 0 abs1 -
+__Lcode 7FE 0 ABS 0 code -
+__Linit 16 0 CODE 0 init -
+__Lsfr0 7FE 0 ABS 0 sfr0 -
+__Lsfr1 7FE 0 ABS 0 sfr1 -
+__Ltext 7FE 0 ABS 0 text -
+__pnvBANK0 39 0 BANK0 1 nvBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__LcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP0 28 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP1 29 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP2 2A 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP3 2B 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP4 2C 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_GP5 2D 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_WPU 95 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__S0 1FB 0 ABS 0 - -
+__S1 3A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_isr 2FA 0 CODE 0 text11 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_som 3A2 0 CODE 0 text1 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_modo_lowpower 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+saved_w 5E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hosccal 7FE 0 CODE 0 osccal -
+__end_of_isr 34A 0 CODE 0 text11 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_som 3BE 0 CODE 0 text1 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__HnvBANK0 7FE 0 ABS 0 nvBANK0 -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXPdcgAl.o
+__end_of_modo_lowpower 3F6 0 CODE 0 text2 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__LbssBANK0 7FE 0 ABS 0 bssBANK0 -
+_cont_toques 33 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_cooking 1EE 0 CODE 0 text4 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext10 3D2 0 CODE 0 text10 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext11 2FA 0 CODE 0 text11 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__pmaintext 2C 0 CODE 0 maintext dist/default/production/TIMER_CAFETEIRA.X.production.o
+_estado_botao 298 0 CODE 0 text3 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Lcommon 7FE 0 ABS 0 common -
+_config_TM1 3D2 0 CODE 0 text10 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_config_mcu 378 0 CODE 0 text9 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_config_osc 3E4 0 CODE 0 text8 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_config_var 3BE 0 CODE 0 text7 dist/default/production/TIMER_CAFETEIRA.X.production.o
+___osccal_val 7FE 0 CODE 0 osccal /tmp/xcXPdcgAl.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__HcstackBANK0 7FE 0 ABS 0 cstackBANK0 -
+__Lend_init 16 0 CODE 0 end_init -
+__LcstackCOMMON 7FE 0 ABS 0 cstackCOMMON -
+__size_of_estado_botao 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+end_of_initialization 28 0 CODE 0 cinit dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hintentry 16 0 CODE 0 intentry -
+cooking@tempo 2D 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Losccal 7FE 0 CODE 0 osccal -
+__Lstrings 7FE 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 7FE 0 ABS 0 bssBANK0 -
+__ptext1 3A2 0 CODE 0 text1 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext2 3EE 0 CODE 0 text2 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext3 298 0 CODE 0 text3 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext4 11E 0 CODE 0 text4 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext5 1EE 0 CODE 0 text5 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext6 34A 0 CODE 0 text6 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext7 3BE 0 CODE 0 text7 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext8 3E4 0 CODE 0 text8 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__ptext9 378 0 CODE 0 text9 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_config_TM1 3E4 0 CODE 0 text10 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_config_mcu 3A2 0 CODE 0 text9 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_config_osc 3EE 0 CODE 0 text8 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_config_var 3D2 0 CODE 0 text7 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of_estado_botao 2FA 0 CODE 0 text3 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+_bt_estado_atual 36 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__end_of__initialization 28 0 CODE 0 cinit dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 7FE 0 ABS 0 clrtext -
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production/TIMER_CAFETEIRA.X.production.o
+som_modo_preparo@modo 25 0 BANK0 1 cstackBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hend_init 18 0 CODE 0 end_init -
+__end_of_main 11E 0 CODE 0 maintext dist/default/production/TIMER_CAFETEIRA.X.production.o
+_ANSEL 9F 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_CMCON 19 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_T1CON 10 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TMR1H F 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+_TMR1L E 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__Hram 7FE 0 ABS 0 ram -
+__Lram 7FE 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production/TIMER_CAFETEIRA.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_isr 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__size_of_som 0 0 ABS 0 - dist/default/production/TIMER_CAFETEIRA.X.production.o
+__initialization 18 0 CODE 0 cinit dist/default/production/TIMER_CAFETEIRA.X.production.o
+__pbssBANK0 32 0 BANK0 1 bssBANK0 dist/default/production/TIMER_CAFETEIRA.X.production.o
+_cooking 11E 0 CODE 0 text4 dist/default/production/TIMER_CAFETEIRA.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 5E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cstackBANK0 1 20 20 1A 1
+intentry 0 4 8 1F7 2
+reset_vec 0 0 0 1 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
